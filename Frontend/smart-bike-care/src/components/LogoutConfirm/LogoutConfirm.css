@@ -1,0 +1,173 @@
+.logout-modal-overlay {
+  position: fixed;
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  box-sizing: border-box;
+
+  background: rgba(15, 23, 42, 0.55);
+
+  z-index: 3000;
+
+  animation: logoutOverlayIn 0.2s ease;
+}
+
+.logout-modal {
+  width: min(390px, 100%);
+
+  padding: 28px;
+
+  box-sizing: border-box;
+
+  background: #ffffff;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 14px;
+
+  text-align: center;
+
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.2);
+
+  animation: logoutModalIn 0.2s ease;
+}
+
+.logout-modal-icon {
+  width: 50px;
+  height: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0 auto 15px;
+
+  border-radius: 50%;
+
+  background: #eff6ff;
+
+  color: #2563eb;
+
+  font-size: 23px;
+  font-weight: 700;
+}
+
+.logout-modal h2 {
+  margin: 0 0 8px;
+
+  color: #111827;
+
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.logout-modal p {
+  margin: 0 auto 22px;
+
+  color: #6b7280;
+
+  font-size: 13px;
+
+  line-height: 1.6;
+}
+
+.logout-modal-actions {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 10px;
+}
+
+.logout-cancel-button,
+.logout-confirm-button {
+  height: 40px;
+
+  border-radius: 8px;
+
+  font-family: inherit;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.logout-cancel-button {
+  border: 1px solid #d1d5db;
+
+  background: #ffffff;
+
+  color: #374151;
+}
+
+.logout-cancel-button:hover {
+  background: #f9fafb;
+
+  border-color: #9ca3af;
+
+  transform: translateY(-1px);
+}
+
+.logout-confirm-button {
+  border: 1px solid #2563eb;
+
+  background: #2563eb;
+
+  color: #ffffff;
+}
+
+.logout-confirm-button:hover {
+  background: #1d4ed8;
+
+  border-color: #1d4ed8;
+
+  transform: translateY(-1px);
+}
+
+@keyframes logoutOverlayIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes logoutModalIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (max-width: 480px) {
+  .logout-modal {
+    padding: 23px 18px;
+  }
+
+  .logout-modal-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .logout-confirm-button {
+    order: -1;
+  }
+}

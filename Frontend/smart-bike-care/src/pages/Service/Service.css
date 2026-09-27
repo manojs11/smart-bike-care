@@ -1,0 +1,1376 @@
+* {
+  box-sizing: border-box;
+}
+
+.service-page {
+  width: 100%;
+  min-height: 100vh;
+  padding: 30px;
+  background: #f5f7fb;
+  color: #172033;
+}
+
+/* Header */
+
+.service-header {
+  max-width: 1500px;
+  margin: 0 auto 28px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.service-page-label {
+  display: inline-block;
+  margin-bottom: 7px;
+  color: #6366f1;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.service-header h1 {
+  margin: 0;
+  color: #111827;
+  font-size: 32px;
+  font-weight: 750;
+  line-height: 1.2;
+}
+
+.service-header p {
+  margin: 8px 0 0;
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.service-back-btn {
+  min-height: 42px;
+  padding: 0 17px;
+  border: 1px solid #dfe3eb;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #334155;
+  font-size: 13px;
+  font-weight: 650;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.service-back-btn:hover {
+  border-color: #c7cde0;
+  background: #f8f9fd;
+  transform: translateY(-1px);
+}
+
+.service-back-btn:active {
+  transform: translateY(0);
+}
+
+/* Main Layout */
+
+.service-layout {
+  max-width: 1500px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1.75fr) minmax(300px, 0.8fr);
+  gap: 24px;
+  align-items: start;
+}
+
+/* Generic Cards */
+
+.service-form-card,
+.service-bike-card,
+.smart-recommendations-card,
+.service-catalog-card,
+.service-spare-part-card,
+.service-history-card {
+  background: #ffffff;
+  border: 1px solid #e6eaf0;
+  border-radius: 18px;
+  box-shadow: 0 8px 30px rgba(15, 23, 42, 0.045);
+}
+
+/* Main Form */
+
+.service-form-card {
+  padding: 28px;
+}
+
+.service-form-card:hover,
+.service-bike-card:hover,
+.smart-recommendations-card:hover,
+.service-catalog-card:hover,
+.service-spare-part-card:hover,
+.service-history-card:hover {
+  border-color: #dce1ea;
+  box-shadow: 0 12px 34px rgba(15, 23, 42, 0.065);
+}
+
+/* Section Heading */
+
+.service-card-heading {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-bottom: 25px;
+}
+
+.service-heading-icon {
+  width: 45px;
+  height: 45px;
+  flex: 0 0 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: #eef2ff;
+  color: #4f46e5;
+  font-size: 20px;
+}
+
+.service-card-heading h2 {
+  margin: 0;
+  color: #172033;
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.service-card-heading p {
+  margin: 5px 0 0;
+  color: #64748b;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+/* Error */
+
+.service-error {
+  margin-bottom: 20px;
+  padding: 13px 15px;
+  border: 1px solid #fecaca;
+  border-radius: 10px;
+  background: #fff5f5;
+  color: #b91c1c;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.service-success-message {
+  margin-bottom: 20px;
+  padding: 13px 15px;
+  border: 1px solid #bbf7d0;
+  border-radius: 10px;
+  background: #f0fdf4;
+  color: #166534;
+  font-size: 13px;
+  font-weight: 650;
+}
+
+/* Form */
+
+.service-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-bottom: 18px;
+}
+
+.service-form-group label {
+  color: #334155;
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.service-form-group input,
+.service-form-group select {
+  width: 100%;
+  min-height: 46px;
+  padding: 0 13px;
+  border: 1px solid #dce1e9;
+  border-radius: 10px;
+  outline: none;
+  background: #ffffff;
+  color: #172033;
+  font-family: inherit;
+  font-size: 13px;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.service-form-group input:hover,
+.service-form-group select:hover {
+  border-color: #c4cada;
+}
+
+.service-form-group input:focus,
+.service-form-group select:focus {
+  border-color: #6366f1;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.service-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+/* Input Units */
+
+.service-input-unit {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.service-input-unit input {
+  padding-right: 42px;
+}
+
+.service-input-unit span {
+  position: absolute;
+  right: 13px;
+  color: #64748b;
+  font-size: 12px;
+  font-weight: 650;
+  pointer-events: none;
+}
+
+.service-input-unit > span:first-child {
+  left: 13px;
+  right: auto;
+  color: #475569;
+}
+
+.service-input-unit > span:first-child + input {
+  padding-left: 31px;
+}
+
+.service-km-current {
+  color: #64748b;
+  font-size: 11px;
+}
+
+.service-field-help {
+  color: #94a3b8;
+  font-size: 11px;
+}
+
+/* Validation */
+
+.service-form-group.has-error input,
+.service-form-group.has-error select {
+  border-color: #ef4444;
+  background: #fffafa;
+}
+
+.service-form-group.has-error input:focus,
+.service-form-group.has-error select:focus {
+  border-color: #ef4444;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.09);
+}
+
+.service-validation-error {
+  color: #dc2626;
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+/* Form Buttons */
+
+.service-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 11px;
+  margin-top: 25px;
+  padding-top: 21px;
+  border-top: 1px solid #edf0f4;
+}
+
+.service-cancel-btn,
+.service-save-btn {
+  min-height: 44px;
+  padding: 0 20px;
+  border-radius: 9px;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 650;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.service-cancel-btn {
+  border: 1px solid #dce1e9;
+  background: #ffffff;
+  color: #475569;
+}
+
+.service-cancel-btn:hover {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+}
+
+.service-save-btn {
+  border: 1px solid #4f46e5;
+  background: #4f46e5;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.16);
+}
+
+.service-save-btn:hover {
+  border-color: #4338ca;
+  background: #4338ca;
+  transform: translateY(-1px);
+  box-shadow: 0 7px 16px rgba(79, 70, 229, 0.2);
+}
+
+.service-cancel-btn:active,
+.service-save-btn:active {
+  transform: scale(0.98);
+}
+
+.service-save-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Bike Card */
+
+.service-bike-card {
+  padding: 25px;
+  position: sticky;
+  top: 20px;
+}
+
+.service-bike-icon {
+  width: 58px;
+  height: 58px;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  background: linear-gradient(
+    135deg,
+    #eef2ff,
+    #f5f3ff
+  );
+  font-size: 28px;
+}
+
+.service-bike-card h2 {
+  margin: 0;
+  color: #111827;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.service-registration {
+  margin: 6px 0 23px;
+  color: #64748b;
+  font-size: 13px;
+}
+
+.service-bike-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.service-bike-stats > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  padding: 13px 0;
+  border-bottom: 1px solid #edf0f4;
+}
+
+.service-bike-stats span {
+  color: #64748b;
+  font-size: 12px;
+}
+
+.service-bike-stats strong {
+  color: #1e293b;
+  font-size: 13px;
+  font-weight: 650;
+  text-align: right;
+}
+
+.service-status-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 18px;
+  padding: 13px 14px;
+  border: 1px solid #dcfce7;
+  border-radius: 10px;
+  background: #f0fdf4;
+}
+
+.service-status-box span {
+  color: #64748b;
+  font-size: 12px;
+}
+
+.service-status-box strong {
+  color: #15803d;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* Bill */
+
+.service-bill-section {
+  margin-top: 8px;
+  padding: 18px;
+  border: 1px dashed #cbd5e1;
+  border-radius: 12px;
+  background: #f8fafc;
+}
+
+.service-bill-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 12px;
+}
+
+.service-bill-heading label {
+  color: #334155;
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.service-bill-heading span {
+  color: #94a3b8;
+  font-size: 11px;
+}
+
+.service-bill-upload {
+  padding: 20px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  background: #ffffff;
+  text-align: center;
+}
+
+.service-bill-upload input {
+  width: 100%;
+  color: #475569;
+  font-size: 12px;
+}
+
+.service-bill-upload p {
+  margin: 12px 0 4px;
+  color: #475569;
+  font-size: 12px;
+  font-weight: 550;
+}
+
+.service-bill-upload > span {
+  color: #94a3b8;
+  font-size: 11px;
+}
+
+.service-bill-preview {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-top: 12px;
+  padding: 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  background: #ffffff;
+}
+
+.service-bill-preview img {
+  width: 70px;
+  height: 70px;
+  flex-shrink: 0;
+  object-fit: cover;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+}
+
+.service-bill-preview > div {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.service-bill-preview strong {
+  max-width: 280px;
+  overflow: hidden;
+  color: #334155;
+  font-size: 12px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.service-bill-preview button {
+  width: fit-content;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #dc2626;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.service-bill-preview button:hover {
+  color: #b91c1c;
+}
+
+/* Smart Recommendations */
+
+.smart-recommendations-card {
+  margin-top: 24px;
+  padding: 26px;
+}
+
+.smart-recommendations-header {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-bottom: 20px;
+}
+
+.smart-icon {
+  width: 45px;
+  height: 45px;
+  flex: 0 0 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: #fff7ed;
+  font-size: 20px;
+}
+
+.smart-recommendations-header h2 {
+  margin: 0;
+  color: #172033;
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.smart-recommendations-header p {
+  margin: 5px 0 0;
+  color: #64748b;
+  font-size: 13px;
+}
+
+.recommendations-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.recommendation-item {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 14px;
+  border: 1px solid #e7eaf0;
+  border-radius: 12px;
+  background: #fafbfc;
+  transition: all 0.2s ease;
+}
+
+.recommendation-item:hover {
+  border-color: #d9def0;
+  background: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 5px 15px rgba(15, 23, 42, 0.045);
+}
+
+.recommendation-icon {
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: #f1f5f9;
+  font-size: 19px;
+}
+
+.recommendation-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.recommendation-title-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.recommendation-title-row h3 {
+  margin: 0;
+  color: #172033;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.recommendation-status {
+  padding: 4px 8px;
+  border-radius: 20px;
+  background: #fff7ed;
+  color: #c2410c;
+  font-size: 10px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.recommendation-status.due {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.recommendation-status.due-soon {
+  background: #fff7ed;
+  color: #c2410c;
+}
+
+.recommendation-status.not-due {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.recommendation-content p {
+  margin: 5px 0;
+  color: #64748b;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.recommendation-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.recommendation-details span {
+  color: #94a3b8;
+  font-size: 11px;
+}
+
+.recommendation-use-btn {
+  flex-shrink: 0;
+  padding: 8px 13px;
+  border: 1px solid #c7d2fe;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #4f46e5;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 650;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.recommendation-use-btn:hover {
+  border-color: #6366f1;
+  background: #eef2ff;
+}
+
+/* Service Catalog */
+
+.service-catalog {
+  margin-top: 24px;
+}
+
+.service-catalog-card {
+  padding: 26px;
+}
+
+.service-catalog-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.service-catalog-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px;
+  border: 1px solid #e7eaf0;
+  border-radius: 12px;
+  background: #ffffff;
+  transition: all 0.2s ease;
+}
+
+.service-catalog-item:hover {
+  border-color: #d6dcf0;
+  background: #fafbff;
+  transform: translateY(-1px);
+}
+
+.service-catalog-icon {
+  width: 43px;
+  height: 43px;
+  flex: 0 0 43px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: #f1f5f9;
+  font-size: 19px;
+}
+
+.service-catalog-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.service-catalog-content h3 {
+  margin: 0 0 3px;
+  color: #172033;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.service-catalog-content > span {
+  color: #6366f1;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.service-catalog-content p {
+  margin: 5px 0;
+  color: #64748b;
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.service-catalog-content small {
+  color: #94a3b8;
+  font-size: 10px;
+}
+
+.service-select-btn {
+  flex-shrink: 0;
+  padding: 8px 13px;
+  border: 1px solid #dce1e9;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #475569;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 650;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.service-select-btn:hover {
+  border-color: #6366f1;
+  background: #eef2ff;
+  color: #4f46e5;
+}
+
+/* Spare Parts */
+
+.service-spare-parts {
+  margin-top: 24px;
+}
+
+.service-spare-part-card {
+  padding: 26px;
+}
+
+.service-spare-parts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.service-spare-part-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px;
+  border: 1px solid #e7eaf0;
+  border-radius: 12px;
+  background: #ffffff;
+  transition: all 0.2s ease;
+}
+
+.service-spare-part-item:hover {
+  border-color: #c7d2fe;
+  background: #fafbff;
+}
+
+.service-spare-part-item.selected {
+  border-color: #6366f1;
+  background: #eef2ff;
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.06);
+}
+
+.service-spare-part-icon {
+  width: 43px;
+  height: 43px;
+  flex: 0 0 43px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: #f1f5f9;
+  font-size: 19px;
+}
+
+.service-spare-part-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.service-spare-part-content h3 {
+  margin: 0 0 3px;
+  color: #172033;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.service-spare-part-content > span {
+  color: #6366f1;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.service-spare-part-content p {
+  margin: 5px 0;
+  color: #64748b;
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.service-spare-part-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.service-spare-part-details span {
+  color: #94a3b8;
+  font-size: 10px;
+}
+
+.service-spare-part-status {
+  padding: 5px 9px;
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.service-spare-part-status.due {
+  background: #fef2f2;
+  color: #dc2626;
+}
+
+.service-spare-part-status.due-soon {
+  background: #fff7ed;
+  color: #ea580c;
+}
+
+.service-spare-part-status.not-due {
+  background: #f0fdf4;
+  color: #15803d;
+}
+
+.spare-part-select-btn {
+  flex-shrink: 0;
+  padding: 8px 13px;
+  border: 1px solid #dce1e9;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #475569;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 650;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.spare-part-select-btn:hover {
+  border-color: #6366f1;
+  background: #eef2ff;
+  color: #4f46e5;
+}
+
+.service-spare-part-item.selected .spare-part-select-btn {
+  border-color: #4f46e5;
+  background: #4f46e5;
+  color: #ffffff;
+}
+
+/* Selected Spare Part */
+
+.selected-spare-part {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 17px;
+  padding: 12px 14px;
+  border: 1px solid #c7d2fe;
+  border-radius: 11px;
+  background: #eef2ff;
+}
+
+.selected-spare-part-icon {
+  width: 40px;
+  height: 40px;
+  flex: 0 0 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9px;
+  background: #ffffff;
+  font-size: 18px;
+}
+
+.selected-spare-part-info {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+  gap: 3px;
+}
+
+.selected-spare-part-info strong {
+  color: #172033;
+  font-size: 12px;
+}
+
+.selected-spare-part-info span {
+  overflow: hidden;
+  color: #64748b;
+  font-size: 10px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.selected-spare-part button {
+  padding: 7px 10px;
+  border: 1px solid #c7d2fe;
+  border-radius: 7px;
+  background: #ffffff;
+  color: #4f46e5;
+  font-family: inherit;
+  font-size: 10px;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+/* Service History */
+
+.service-history-card {
+  margin-top: 24px;
+  padding: 26px;
+}
+
+.service-history-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.service-history-count {
+  padding: 6px 10px;
+  border-radius: 20px;
+  background: #f1f5f9;
+  color: #475569;
+  font-size: 10px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.service-history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.service-history-item {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 13px;
+  border: 1px solid #e7eaf0;
+  border-radius: 11px;
+  background: #ffffff;
+  transition: all 0.2s ease;
+}
+
+.service-history-item:hover {
+  border-color: #d8ddea;
+  background: #fafbfc;
+}
+
+.history-service-icon {
+  width: 41px;
+  height: 41px;
+  flex: 0 0 41px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: #eef2ff;
+  font-size: 18px;
+}
+
+.history-service-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.history-service-info h3 {
+  margin: 0 0 4px;
+  color: #172033;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.history-service-info p {
+  display: inline-block;
+  margin: 0 10px 0 0;
+  color: #64748b;
+  font-size: 10px;
+}
+
+.history-service-info > span {
+  color: #64748b;
+  font-size: 10px;
+}
+
+.history-service-cost {
+  color: #172033;
+  font-size: 12px;
+  font-weight: 750;
+  white-space: nowrap;
+}
+
+.service-history-status {
+  padding: 5px 8px;
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.service-history-status.completed {
+  background: #f0fdf4;
+  color: #15803d;
+}
+
+.service-history-status.pending {
+  background: #fff7ed;
+  color: #c2410c;
+}
+
+.view-bill-btn {
+  padding: 6px 10px;
+  border: 1px solid #dce1e9;
+  border-radius: 7px;
+  background: #ffffff;
+  color: #475569;
+  font-family: inherit;
+  font-size: 10px;
+  font-weight: 650;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.view-bill-btn:hover {
+  border-color: #6366f1;
+  background: #eef2ff;
+  color: #4f46e5;
+}
+
+/* Empty History */
+
+.no-service-history {
+  padding: 35px 20px;
+  text-align: center;
+  color: #64748b;
+}
+
+.no-service-history > div {
+  margin-bottom: 8px;
+  font-size: 28px;
+}
+
+.no-service-history h3 {
+  margin: 0 0 5px;
+  color: #334155;
+  font-size: 15px;
+}
+
+.no-service-history p {
+  margin: 0;
+  color: #94a3b8;
+  font-size: 11px;
+}
+
+/* Empty Page */
+
+.service-empty {
+  width: min(100%, 480px);
+  margin: 100px auto;
+  padding: 45px 30px;
+  border: 1px solid #e6eaf0;
+  border-radius: 18px;
+  background: #ffffff;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+  text-align: center;
+}
+
+.service-empty-icon {
+  margin-bottom: 15px;
+  font-size: 48px;
+}
+
+.service-empty h2 {
+  margin: 0 0 8px;
+  color: #172033;
+  font-size: 21px;
+}
+
+.service-empty p {
+  margin: 0 0 22px;
+  color: #64748b;
+  font-size: 13px;
+}
+
+/* Tablet */
+
+@media (max-width: 1100px) {
+  .service-page {
+    padding: 24px;
+  }
+
+  .service-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .service-bike-card {
+    position: static;
+    order: -1;
+  }
+
+  .service-bike-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 25px;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 700px) {
+  .service-page {
+    padding: 18px 14px;
+  }
+
+  .service-header {
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+
+  .service-header h1 {
+    font-size: 26px;
+  }
+
+  .service-header p {
+    font-size: 13px;
+  }
+
+  .service-back-btn {
+    width: 100%;
+  }
+
+  .service-form-card,
+  .service-bike-card,
+  .smart-recommendations-card,
+  .service-catalog-card,
+  .service-spare-part-card,
+  .service-history-card {
+    padding: 19px;
+    border-radius: 14px;
+  }
+
+  .service-form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .service-bike-stats {
+    display: flex;
+  }
+
+  .service-form-actions {
+    flex-direction: column-reverse;
+  }
+
+  .service-cancel-btn,
+  .service-save-btn {
+    width: 100%;
+  }
+
+  .recommendation-item,
+  .service-catalog-item,
+  .service-spare-part-item,
+  .service-history-item {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .recommendation-content,
+  .service-catalog-content,
+  .service-spare-part-content,
+  .history-service-info {
+    min-width: calc(100% - 55px);
+  }
+
+  .recommendation-use-btn,
+  .service-select-btn,
+  .spare-part-select-btn {
+    width: 100%;
+    margin-left: 55px;
+  }
+
+  .service-history-cost,
+  .service-history-status,
+  .view-bill-btn {
+    margin-left: 55px;
+  }
+
+  .service-bill-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 5px;
+  }
+}
+
+/* Small Mobile */
+
+@media (max-width: 480px) {
+  .service-page {
+    padding: 14px 10px;
+  }
+
+  .service-header h1 {
+    font-size: 23px;
+  }
+
+  .service-form-card,
+  .service-bike-card,
+  .smart-recommendations-card,
+  .service-catalog-card,
+  .service-spare-part-card,
+  .service-history-card {
+    padding: 16px;
+  }
+
+  .service-card-heading {
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .service-heading-icon,
+  .smart-icon {
+    width: 40px;
+    height: 40px;
+    flex-basis: 40px;
+    font-size: 18px;
+  }
+
+  .service-card-heading h2,
+  .smart-recommendations-header h2 {
+    font-size: 17px;
+  }
+
+  .service-card-heading p,
+  .smart-recommendations-header p {
+    font-size: 12px;
+  }
+
+  .service-bill-preview {
+    align-items: flex-start;
+  }
+
+  .service-bill-preview img {
+    width: 58px;
+    height: 58px;
+  }
+
+  .service-bill-preview strong {
+    max-width: 170px;
+  }
+
+  .recommendation-use-btn,
+  .service-select-btn,
+  .spare-part-select-btn {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .service-history-cost,
+  .service-history-status,
+  .view-bill-btn {
+    margin-left: 51px;
+  }
+
+  .service-history-header {
+    flex-direction: column;
+  }
+
+  .selected-spare-part {
+    align-items: flex-start;
+  }
+}
+
+/* Accessibility */
+
+.service-back-btn:focus-visible,
+.service-save-btn:focus-visible,
+.service-cancel-btn:focus-visible,
+.service-select-btn:focus-visible,
+.recommendation-use-btn:focus-visible,
+.spare-part-select-btn:focus-visible,
+.view-bill-btn:focus-visible {
+  outline: 3px solid rgba(99, 102, 241, 0.2);
+  outline-offset: 2px;
+}
+
+/* Reduced Motion */
+
+@media (prefers-reduced-motion: reduce) {
+  .service-page *,
+  .service-page *::before,
+  .service-page *::after {
+    scroll-behavior: auto !important;
+    transition: none !important;
+    animation: none !important;
+  }
+}

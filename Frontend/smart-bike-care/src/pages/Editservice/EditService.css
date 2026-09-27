@@ -1,0 +1,259 @@
+.edit-service-page {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 30px;
+}
+
+.edit-service-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.edit-service-label {
+  display: inline-block;
+  margin-bottom: 8px;
+  color: #6366f1;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.edit-service-header h1 {
+  margin: 0;
+  color: #172033;
+  font-size: 30px;
+  font-weight: 750;
+}
+
+.edit-service-header p {
+  margin: 8px 0 0;
+  color: #64748b;
+  font-size: 14px;
+}
+
+.edit-service-back-btn {
+  padding: 11px 16px;
+  border: 1px solid #d7dde7;
+  border-radius: 9px;
+  background: #ffffff;
+  color: #475569;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.edit-service-back-btn:hover {
+  border-color: #6366f1;
+  color: #4f46e5;
+}
+
+.edit-service-card {
+  padding: 28px;
+  background: #ffffff;
+  border: 1px solid #e3e8ef;
+  border-radius: 16px;
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.05);
+}
+
+.edit-service-card-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-bottom: 22px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid #edf0f4;
+}
+
+.edit-service-card-icon {
+  width: 46px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: #eef2ff;
+  font-size: 22px;
+}
+
+.edit-service-card-header h2 {
+  margin: 0;
+  color: #172033;
+  font-size: 19px;
+}
+
+.edit-service-card-header p {
+  margin: 5px 0 0;
+  color: #64748b;
+  font-size: 13px;
+}
+
+.edit-service-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.edit-service-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.edit-service-field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.edit-service-field label {
+  color: #334155;
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.edit-service-field input,
+.edit-service-field select {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 13px;
+  border: 1px solid #d7dde7;
+  border-radius: 9px;
+  outline: none;
+  background: #ffffff;
+  color: #172033;
+  font-size: 14px;
+}
+
+.edit-service-field input:focus,
+.edit-service-field select:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.edit-service-error {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 13px 15px;
+  margin-bottom: 20px;
+  border: 1px solid #fecaca;
+  border-radius: 9px;
+  background: #fef2f2;
+  color: #b91c1c;
+  font-size: 13px;
+}
+
+.edit-service-success {
+  padding: 13px 15px;
+  margin-bottom: 20px;
+  border: 1px solid #bbf7d0;
+  border-radius: 9px;
+  background: #f0fdf4;
+  color: #15803d;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.edit-service-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding-top: 8px;
+}
+
+.edit-service-cancel-btn,
+.edit-service-save-btn {
+  min-width: 130px;
+  padding: 12px 18px;
+  border-radius: 9px;
+  font-size: 13px;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.edit-service-cancel-btn {
+  border: 1px solid #d7dde7;
+  background: #ffffff;
+  color: #475569;
+}
+
+.edit-service-cancel-btn:hover {
+  background: #f8fafc;
+}
+
+.edit-service-save-btn {
+  border: 1px solid #4f46e5;
+  background: #4f46e5;
+  color: #ffffff;
+}
+
+.edit-service-save-btn:hover {
+  background: #4338ca;
+}
+
+.edit-service-cancel-btn:disabled,
+.edit-service-save-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.edit-service-loading {
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.edit-service-loading-icon {
+  font-size: 34px;
+  margin-bottom: 12px;
+}
+
+.edit-service-loading h2 {
+  margin: 0;
+  color: #172033;
+  font-size: 20px;
+}
+
+.edit-service-loading p {
+  margin-top: 7px;
+  color: #64748b;
+  font-size: 13px;
+}
+
+@media (max-width: 700px) {
+  .edit-service-page {
+    padding: 20px 15px;
+  }
+
+  .edit-service-header {
+    flex-direction: column;
+  }
+
+  .edit-service-back-btn {
+    width: 100%;
+  }
+
+  .edit-service-row {
+    grid-template-columns: 1fr;
+  }
+
+  .edit-service-card {
+    padding: 20px;
+  }
+
+  .edit-service-actions {
+    flex-direction: column-reverse;
+  }
+
+  .edit-service-cancel-btn,
+  .edit-service-save-btn {
+    width: 100%;
+  }
+}

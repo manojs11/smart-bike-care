@@ -1,0 +1,3226 @@
+/* =========================================================
+   SMART BIKE CARE
+   BIKE HEALTH PAGE
+   COMPLETE HEALTH CSS
+========================================================= */
+
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+.health-page {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 28px;
+  box-sizing: border-box;
+  color: #172033;
+  overflow-x: hidden;
+}
+
+.health-page *,
+.health-page *::before,
+.health-page *::after {
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   PAGE HEADER
+========================================================= */
+
+.health-page-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.health-page-eyebrow {
+  margin: 0 0 6px;
+  color: #2563eb;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+}
+
+.health-page-header h1 {
+  margin: 0;
+  color: #172033;
+  font-size: 32px;
+  line-height: 1.2;
+  font-weight: 800;
+}
+
+.health-page-subtitle {
+  margin: 8px 0 0;
+  color: #6b7280;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.health-refresh-btn,
+.health-primary-btn,
+.health-secondary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 9px 16px;
+  border-radius: 9px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  user-select: none;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.health-refresh-btn {
+  border: 1px solid #dbe2ea;
+  background: #ffffff;
+  color: #374151;
+}
+
+.health-refresh-btn:hover {
+  background: #f8fafc;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(15, 23, 42, 0.06);
+}
+
+.health-primary-btn {
+  border: none;
+  background: #2563eb;
+  color: #ffffff;
+}
+
+.health-primary-btn:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.18);
+}
+
+.health-secondary-btn {
+  border: 1px solid #dbe2ea;
+  background: #ffffff;
+  color: #2563eb;
+}
+
+.health-secondary-btn:hover {
+  background: #eff6ff;
+  border-color: #bfdbfe;
+}
+
+.health-refresh-btn:focus-visible,
+.health-primary-btn:focus-visible,
+.health-secondary-btn:focus-visible {
+  outline: 3px solid rgba(37, 99, 235, 0.2);
+  outline-offset: 2px;
+}
+
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.health-empty-state {
+  position: relative;
+  min-height: 420px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  overflow: hidden;
+  text-align: center;
+
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 18px;
+
+  box-shadow:
+    0 5px 20px rgba(15, 23, 42, 0.04);
+}
+
+.health-empty-state::before {
+  content: "";
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  top: -100px;
+  right: -70px;
+  border-radius: 50%;
+  background: rgba(37, 99, 235, 0.035);
+  pointer-events: none;
+}
+
+.health-empty-icon {
+  width: 70px;
+  height: 70px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 18px;
+
+  border-radius: 50%;
+  background: #eff6ff;
+
+  font-size: 32px;
+}
+
+.health-empty-state h2 {
+  margin: 0 0 8px;
+  color: #172033;
+  font-size: 24px;
+}
+
+.health-empty-state p {
+  max-width: 500px;
+  margin: 0 0 22px;
+  color: #6b7280;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   BIKE SELECTOR
+========================================================= */
+
+.health-bike-selector-section {
+  margin-bottom: 22px;
+  padding: 20px 22px;
+
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+
+  box-shadow:
+    0 4px 14px rgba(15, 23, 42, 0.04);
+}
+
+.health-bike-selector-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.health-selector-label {
+  display: block;
+  margin-bottom: 5px;
+
+  color: #2563eb;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.health-bike-selector-content h2 {
+  margin: 0 0 4px;
+  color: #172033;
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.health-bike-selector-content p {
+  margin: 0;
+  color: #6b7280;
+  font-size: 13px;
+}
+
+.health-bike-select {
+  width: 280px;
+  max-width: 100%;
+  min-height: 42px;
+
+  padding: 9px 12px;
+
+  border: 1px solid #d8dee8;
+  border-radius: 9px;
+
+  background: #ffffff;
+  color: #273246;
+
+  font-size: 13px;
+  cursor: pointer;
+  outline: none;
+}
+
+.health-bike-select:hover {
+  border-color: #b9c5d4;
+}
+
+.health-bike-select:focus {
+  border-color: #2563eb;
+  box-shadow:
+    0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+
+/* =========================================================
+   SELECTED BIKE
+========================================================= */
+
+.health-selected-bike-section {
+  display: grid;
+
+  grid-template-columns:
+    170px
+    minmax(0, 1fr)
+    150px;
+
+  align-items: center;
+
+  gap: 22px;
+
+  margin-bottom: 28px;
+  padding: 20px;
+
+  background: #ffffff;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 18px;
+
+  box-shadow:
+    0 5px 18px rgba(15, 23, 42, 0.04);
+}
+
+.health-selected-bike-image {
+  position: relative;
+
+  width: 170px;
+  height: 120px;
+
+  overflow: hidden;
+
+  border-radius: 13px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f1f5f9,
+      #e8eef6
+    );
+}
+
+.health-selected-bike-image img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition: transform 0.3s ease;
+}
+
+.health-selected-bike-image:hover img {
+  transform: scale(1.025);
+}
+
+.health-bike-placeholder {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #eff6ff;
+
+  font-size: 40px;
+}
+
+.health-selected-bike-info {
+  min-width: 0;
+}
+
+.health-bike-label {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #2563eb;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  letter-spacing: 0.8px;
+}
+
+.health-selected-bike-info h2 {
+  margin: 0;
+
+  color: #172033;
+
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.health-bike-registration {
+  margin: 5px 0 15px;
+
+  color: #6b7280;
+
+  font-size: 13px;
+}
+
+.health-bike-meta {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 28px;
+}
+
+.health-bike-meta div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.health-bike-meta span {
+  color: #8a94a6;
+
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.health-bike-meta strong {
+  color: #273246;
+
+  font-size: 14px;
+}
+
+.health-selected-bike-score {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  text-align: center;
+}
+
+.health-score-circle {
+  position: relative;
+
+  width: 82px;
+  height: 82px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 7px solid #dbeafe;
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  color: #2563eb;
+}
+
+.health-score-circle span {
+  font-size: 21px;
+  font-weight: 800;
+}
+
+.health-score-circle small {
+  margin-left: 1px;
+
+  color: #64748b;
+
+  font-size: 11px;
+}
+
+.health-selected-bike-score strong {
+  color: #2563eb;
+
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   COMMON SECTIONS
+========================================================= */
+
+.health-overview-section,
+.health-detail-section,
+.health-chain-section,
+.health-oil-section,
+.health-score-section,
+.health-alerts-section,
+.health-history-section,
+.maintenance-status-section,
+.health-summary-section {
+  margin-bottom: 28px;
+}
+
+.health-section-header,
+.health-detail-header,
+.health-chain-header,
+.health-oil-header,
+.health-alerts-header,
+.health-history-header,
+.maintenance-status-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  margin-bottom: 18px;
+}
+
+.health-section-label {
+  display: block;
+
+  color: #2563eb;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  letter-spacing: 0.8px;
+}
+
+.health-section-header h2,
+.health-alerts-header h2,
+.health-history-header h2,
+.maintenance-status-header h2 {
+  margin: 5px 0;
+
+  color: #172033;
+
+  font-size: 22px;
+  font-weight: 750;
+}
+
+.health-section-header p,
+.health-alerts-header p,
+.health-history-header p {
+  margin: 0;
+
+  color: #6b7280;
+
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   OVERVIEW
+========================================================= */
+
+.health-overview-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 16px;
+}
+
+.health-overview-card {
+  position: relative;
+
+  padding: 18px;
+
+  overflow: hidden;
+
+  background: #ffffff;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+
+  box-shadow:
+    0 4px 14px rgba(15, 23, 42, 0.03);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.health-overview-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 2px;
+
+  background: #2563eb;
+
+  opacity: 0;
+
+  transition: opacity 0.2s ease;
+}
+
+.health-overview-card:hover {
+  transform: translateY(-2px);
+
+  border-color: #d8e0ea;
+
+  box-shadow:
+    0 8px 20px rgba(15, 23, 42, 0.06);
+}
+
+.health-overview-card:hover::before {
+  opacity: 1;
+}
+
+.health-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 14px;
+}
+
+.health-card-icon {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+
+  background: #eff6ff;
+
+  font-size: 20px;
+}
+
+.health-card-score {
+  color: #2563eb;
+
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.health-overview-card h3 {
+  margin: 0 0 5px;
+
+  color: #172033;
+
+  font-size: 16px;
+}
+
+.health-overview-card p {
+  margin: 0 0 13px;
+
+  color: #6b7280;
+
+  font-size: 13px;
+}
+
+.health-progress {
+  position: relative;
+
+  width: 100%;
+  height: 7px;
+
+  overflow: hidden;
+
+  border-radius: 20px;
+
+  background: #e9eef5;
+}
+
+.health-progress-fill {
+  height: 100%;
+
+  min-width: 3px;
+
+  border-radius: inherit;
+
+  background: #2563eb;
+
+  transition: width 0.4s ease;
+}
+
+
+/* =========================================================
+   H3 - H6 DETAIL
+========================================================= */
+
+.health-detail-section {
+  position: relative;
+
+  padding: 22px;
+
+  background: #ffffff;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 17px;
+
+  box-shadow:
+    0 4px 15px rgba(15, 23, 42, 0.035);
+}
+
+.health-detail-section::before,
+.health-chain-section::before,
+.health-oil-section::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+
+  left: 24px;
+  right: 24px;
+
+  height: 2px;
+
+  border-radius: 0 0 4px 4px;
+
+  background: #2563eb;
+
+  opacity: 0.65;
+}
+
+.health-detail-title {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+}
+
+.health-detail-icon {
+  width: 44px;
+  height: 44px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 11px;
+
+  background: #eff6ff;
+
+  font-size: 21px;
+}
+
+.health-detail-title span {
+  display: block;
+
+  margin-bottom: 3px;
+
+  color: #2563eb;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 0.8px;
+}
+
+.health-detail-title h2 {
+  margin: 0;
+
+  color: #172033;
+
+  font-size: 20px;
+}
+
+.health-detail-status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 30px;
+
+  padding: 6px 11px;
+
+  border-radius: 20px;
+
+  background: #ecfdf3;
+
+  color: #15803d;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.health-detail-body {
+  display: grid;
+
+  grid-template-columns:
+    110px
+    minmax(0, 1fr);
+
+  align-items: center;
+
+  gap: 25px;
+}
+
+.health-detail-score {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.health-detail-score .health-score-circle {
+  width: 92px;
+  height: 92px;
+}
+
+.health-detail-info {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 12px;
+}
+
+.health-info-card {
+  padding: 14px;
+
+  border-radius: 11px;
+
+  background: #f8fafc;
+
+  border: 1px solid #eef1f5;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.health-info-card:hover {
+  background: #f9fbfd;
+
+  border-color: #dbe3ed;
+
+  transform: translateY(-1px);
+}
+
+.health-info-card span {
+  display: block;
+
+  margin-bottom: 6px;
+
+  color: #8a94a6;
+
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.health-info-card strong {
+  color: #273246;
+
+  font-size: 14px;
+}
+
+.health-maintenance-message {
+  margin-top: 18px;
+
+  padding: 14px 16px;
+
+  border-radius: 11px;
+
+  background: #f8fafc;
+
+  border-left: 4px solid #2563eb;
+}
+
+.health-maintenance-message strong {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #273246;
+
+  font-size: 13px;
+}
+
+.health-maintenance-message p {
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   H7 CHAIN
+========================================================= */
+
+.health-chain-section {
+  position: relative;
+
+  padding: 22px;
+
+  background: #ffffff;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 17px;
+
+  box-shadow:
+    0 4px 15px rgba(15, 23, 42, 0.035);
+}
+
+.health-chain-header > div:first-child > span,
+.health-oil-header > div:first-child > span {
+  display: block;
+
+  color: #2563eb;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 0.8px;
+}
+
+.health-chain-header h2,
+.health-oil-header h2 {
+  margin: 5px 0;
+
+  color: #172033;
+
+  font-size: 21px;
+}
+
+.health-chain-header p,
+.health-oil-header p {
+  margin: 0;
+
+  color: #6b7280;
+
+  font-size: 13px;
+}
+
+.health-chain-score,
+.health-oil-score {
+  width: 74px;
+  height: 74px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 6px solid #dbeafe;
+
+  border-radius: 50%;
+
+  color: #2563eb;
+}
+
+.health-chain-score span,
+.health-oil-score span {
+  font-size: 19px;
+  font-weight: 800;
+}
+
+.health-chain-score small,
+.health-oil-score small {
+  font-size: 10px;
+}
+
+.health-chain-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 12px;
+}
+
+.health-chain-info-card {
+  padding: 15px;
+
+  background: #f8fafc;
+
+  border: 1px solid #eef1f5;
+  border-radius: 11px;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.health-chain-info-card:hover {
+  background: #f9fbfd;
+
+  border-color: #dbe3ed;
+
+  transform: translateY(-1px);
+}
+
+.health-chain-info-card span {
+  display: block;
+
+  margin-bottom: 6px;
+
+  color: #8a94a6;
+
+  font-size: 11px;
+}
+
+.health-chain-info-card strong {
+  color: #273246;
+
+  font-size: 13px;
+}
+
+.health-chain-maintenance {
+  margin-top: 17px;
+
+  padding: 14px 16px;
+
+  background: #f8fafc;
+
+  border-radius: 11px;
+
+  border-left: 4px solid #2563eb;
+}
+
+.health-chain-maintenance strong {
+  display: block;
+
+  margin-bottom: 5px;
+
+  font-size: 13px;
+}
+
+.health-chain-maintenance p {
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 13px;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   H8 ENGINE OIL
+========================================================= */
+
+.health-oil-section {
+  position: relative;
+
+  padding: 22px;
+
+  background: #ffffff;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 17px;
+
+  box-shadow:
+    0 4px 15px rgba(15, 23, 42, 0.035);
+}
+
+.health-oil-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 12px;
+}
+
+.health-oil-info-card {
+  padding: 15px;
+
+  background: #f8fafc;
+
+  border: 1px solid #eef1f5;
+  border-radius: 11px;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.health-oil-info-card:hover {
+  background: #f9fbfd;
+
+  border-color: #dbe3ed;
+
+  transform: translateY(-1px);
+}
+
+.health-oil-info-card span {
+  display: block;
+
+  margin-bottom: 6px;
+
+  color: #8a94a6;
+
+  font-size: 11px;
+}
+
+.health-oil-info-card strong {
+  color: #273246;
+
+  font-size: 13px;
+}
+
+.health-oil-maintenance {
+  margin-top: 17px;
+
+  padding: 14px 16px;
+
+  background: #fffaf0;
+
+  border-left: 4px solid #f59e0b;
+
+  border-radius: 11px;
+}
+
+.health-oil-maintenance strong {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #92400e;
+
+  font-size: 13px;
+}
+
+.health-oil-maintenance p {
+  margin: 0;
+
+  color: #78350f;
+
+  font-size: 13px;
+
+  line-height: 1.6;
+}
+
+.health-oil-checklist {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 10px;
+
+  margin-top: 15px;
+}
+
+.health-oil-checklist div {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 10px;
+
+  background: #f8fafc;
+
+  border: 1px solid #eef1f5;
+
+  border-radius: 9px;
+}
+
+.health-oil-checklist span {
+  width: 22px;
+  height: 22px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #ecfdf3;
+
+  color: #15803d;
+
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.health-oil-checklist p {
+  margin: 0;
+
+  color: #475569;
+
+  font-size: 12px;
+}
+
+.health-oil-tip {
+  margin-top: 15px;
+
+  padding: 13px 15px;
+
+  background: #eff6ff;
+
+  border-radius: 10px;
+}
+
+.health-oil-tip strong {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: #1d4ed8;
+
+  font-size: 12px;
+}
+
+.health-oil-tip p {
+  margin: 0;
+
+  color: #475569;
+
+  font-size: 12px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   H9
+   OVERALL HEALTH SCORE
+   NEW DASHBOARD DESIGN
+========================================================= */
+
+.health-score-section {
+  position: relative;
+
+  display: block !important;
+
+  width: 100%;
+
+  margin-bottom: 28px;
+
+  padding: 26px;
+
+  overflow: hidden;
+
+  background: #ffffff;
+
+  border: 1px solid #dfe6ef;
+
+  border-radius: 20px;
+
+  box-shadow:
+    0 8px 28px rgba(15, 23, 42, 0.055);
+}
+
+.health-score-section::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 4px;
+
+  background: #2563eb;
+}
+
+
+/* =========================================================
+   H9 HEADER
+========================================================= */
+
+.health-score-header {
+  display: grid !important;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    auto;
+
+  align-items: center;
+
+  gap: 28px;
+
+  width: 100%;
+
+  margin-bottom: 24px;
+}
+
+.health-score-header > div:first-child {
+  min-width: 0;
+}
+
+.health-score-header > div:first-child > span {
+  display: inline-flex;
+
+  align-items: center;
+
+  min-height: 24px;
+
+  margin-bottom: 8px;
+
+  padding: 4px 9px;
+
+  border-radius: 7px;
+
+  background: #eff6ff;
+
+  color: #2563eb;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 0.9px;
+}
+
+.health-score-header h2 {
+  margin: 0 0 7px;
+
+  color: #172033;
+
+  font-size: 25px;
+
+  line-height: 1.2;
+
+  font-weight: 800;
+}
+
+.health-score-header p {
+  max-width: 650px;
+
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 13px;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   H9 MAIN SCORE
+========================================================= */
+
+.health-overall-score-circle {
+  position: relative;
+
+  width: 120px;
+  height: 120px;
+
+  flex: 0 0 120px;
+
+  display: flex !important;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 8px solid #dbeafe;
+
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 0 0 5px #eff6ff,
+    0 8px 22px rgba(37, 99, 235, 0.10);
+}
+
+.health-overall-score-circle::before {
+  content: "";
+
+  position: absolute;
+
+  inset: -11px;
+
+  border: 1px solid #bfdbfe;
+
+  border-radius: 50%;
+
+  opacity: 0.7;
+
+  pointer-events: none;
+}
+
+.health-overall-score-circle span {
+  position: relative;
+
+  z-index: 1;
+
+  color: #1d4ed8;
+
+  font-size: 32px;
+
+  line-height: 1;
+
+  font-weight: 800;
+}
+
+.health-overall-score-circle small {
+  position: relative;
+
+  z-index: 1;
+
+  margin-top: 6px;
+
+  color: #64748b;
+
+  font-size: 11px;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   H9 QUICK INFORMATION
+========================================================= */
+
+.health-score-assessment {
+  display: grid !important;
+
+  grid-template-columns:
+    repeat(5, minmax(0, 1fr));
+
+  width: 100%;
+
+  gap: 10px;
+
+  margin: 0 0 22px;
+}
+
+.health-score-assessment-card {
+  position: relative;
+
+  min-width: 0;
+
+  min-height: 82px;
+
+  display: flex !important;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  padding: 14px 15px;
+
+  overflow: hidden;
+
+  background: #f8fafc;
+
+  border: 1px solid #e5eaf1;
+
+  border-radius: 12px;
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.health-score-assessment-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 3px;
+
+  background: #2563eb;
+}
+
+.health-score-assessment-card:hover {
+  transform: translateY(-2px);
+
+  background: #ffffff;
+
+  border-color: #cbd5e1;
+
+  box-shadow:
+    0 6px 16px rgba(15, 23, 42, 0.055);
+}
+
+.health-score-assessment-card span {
+  display: block;
+
+  margin-bottom: 7px;
+
+  overflow: hidden;
+
+  color: #94a3b8;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  line-height: 1.35;
+
+  text-overflow: ellipsis;
+
+  text-transform: uppercase;
+
+  white-space: nowrap;
+
+  letter-spacing: 0.45px;
+}
+
+.health-score-assessment-card strong {
+  display: block;
+
+  overflow: hidden;
+
+  color: #1e293b;
+
+  font-size: 13px;
+
+  font-weight: 800;
+
+  line-height: 1.35;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   H9 COMPONENT HEALTH
+========================================================= */
+
+.health-component-scores {
+  display: block !important;
+
+  width: 100%;
+
+  margin: 0;
+
+  padding: 20px;
+
+  background: #ffffff;
+
+  border: 1px solid #e5eaf1;
+
+  border-radius: 14px;
+}
+
+.health-component-scores h3 {
+  margin: 0 0 18px;
+
+  color: #172033;
+
+  font-size: 16px;
+
+  font-weight: 800;
+}
+
+.health-component-row {
+  display: block !important;
+
+  width: 100%;
+
+  margin-bottom: 15px;
+}
+
+.health-component-row:last-child {
+  margin-bottom: 0;
+}
+
+.health-component-name {
+  display: flex !important;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 12px;
+
+  margin-bottom: 7px;
+}
+
+.health-component-name span {
+  color: #475569;
+
+  font-size: 12px;
+
+  font-weight: 650;
+}
+
+.health-component-name strong {
+  color: #1e293b;
+
+  font-size: 12px;
+
+  font-weight: 800;
+}
+
+.health-component-scores .health-progress {
+  display: block !important;
+
+  width: 100%;
+
+  height: 8px;
+
+  overflow: hidden;
+
+  border-radius: 20px;
+
+  background: #e9eef5;
+}
+
+.health-component-scores .health-progress-fill {
+  display: block !important;
+
+  height: 100%;
+
+  min-width: 3px;
+
+  border-radius: 20px;
+
+  background: #2563eb;
+
+  transition: width 0.5s ease;
+}
+
+
+/* =========================================================
+   H9 SCORE GUIDE
+========================================================= */
+
+.health-score-guide {
+  display: block !important;
+
+  width: 100%;
+
+  margin: 16px 0 0;
+
+  padding: 18px 20px;
+
+  background: #f8fafc;
+
+  border: 1px solid #e5eaf1;
+
+  border-radius: 14px;
+}
+
+.health-score-guide h3 {
+  margin: 0 0 14px;
+
+  color: #172033;
+
+  font-size: 15px;
+
+  font-weight: 800;
+}
+
+.health-guide-grid {
+  display: grid !important;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 9px;
+
+  width: 100%;
+}
+
+.health-guide-grid div {
+  min-width: 0;
+
+  padding: 12px 8px;
+
+  text-align: center;
+
+  background: #ffffff;
+
+  border: 1px solid #e5eaf1;
+
+  border-radius: 10px;
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.health-guide-grid div:hover {
+  transform: translateY(-1px);
+
+  border-color: #cbd5e1;
+
+  box-shadow:
+    0 4px 12px rgba(15, 23, 42, 0.04);
+}
+
+.health-guide-grid span {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: #2563eb;
+
+  font-size: 13px;
+
+  font-weight: 800;
+}
+
+.health-guide-grid p {
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 10px;
+
+  line-height: 1.35;
+}
+
+
+/* =========================================================
+   H10 HEALTH ALERTS
+========================================================= */
+
+.health-alerts-section {
+  position: relative;
+
+  padding: 22px;
+
+  background: #ffffff;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 17px;
+
+  box-shadow:
+    0 4px 15px rgba(15, 23, 42, 0.035);
+}
+
+.health-alerts-count {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  min-height: 34px;
+
+  padding: 7px 12px;
+
+  border-radius: 20px;
+
+  background: #eff6ff;
+
+  color: #2563eb;
+
+  font-size: 14px;
+
+  font-weight: 800;
+}
+
+.health-alerts-count span {
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.health-alert-list {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 12px;
+}
+
+.health-alert-card {
+  position: relative;
+
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 13px;
+
+  padding: 15px;
+
+  overflow: hidden;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 12px;
+
+  background: #ffffff;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.health-alert-card::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+
+  top: 0;
+  bottom: 0;
+
+  width: 3px;
+}
+
+.health-alert-card-danger {
+  background: #fff7f7;
+  border-color: #fecaca;
+}
+
+.health-alert-card-danger::before {
+  background: #dc2626;
+}
+
+.health-alert-card-warning {
+  background: #fffaf0;
+  border-color: #fed7aa;
+}
+
+.health-alert-card-warning::before {
+  background: #f59e0b;
+}
+
+.health-alert-card-info {
+  background: #f5f9ff;
+  border-color: #bfdbfe;
+}
+
+.health-alert-card-info::before {
+  background: #2563eb;
+}
+
+.health-alert-card-success {
+  background: #f4fff8;
+  border-color: #bbf7d0;
+}
+
+.health-alert-card-success::before {
+  background: #16a34a;
+}
+
+.health-alert-card:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 7px 18px rgba(15, 23, 42, 0.06);
+}
+
+.health-alert-icon {
+  width: 38px;
+  height: 38px;
+
+  flex: 0 0 38px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 9px;
+
+  background: #ffffff;
+
+  font-size: 18px;
+}
+
+.health-alert-content {
+  flex: 1;
+
+  min-width: 0;
+}
+
+.health-alert-title-row {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-bottom: 5px;
+}
+
+.health-alert-title-row h3 {
+  margin: 0;
+
+  color: #172033;
+
+  font-size: 14px;
+}
+
+.health-alert-badge {
+  display: inline-flex;
+
+  align-items: center;
+
+  padding: 4px 8px;
+
+  border-radius: 20px;
+
+  font-size: 9px;
+
+  font-weight: 800;
+}
+
+.health-alert-badge-danger {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.health-alert-badge-warning {
+  background: #ffedd5;
+  color: #c2410c;
+}
+
+.health-alert-badge-info {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.health-alert-badge-success {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.health-alert-content > p {
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 12px;
+
+  line-height: 1.5;
+}
+
+.health-alert-action {
+  margin-top: 8px;
+
+  color: #475569;
+
+  font-size: 11px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   H11 HEALTH HISTORY
+========================================================= */
+
+.health-history-section {
+  position: relative;
+
+  padding: 22px;
+
+  background: #ffffff;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 17px;
+
+  box-shadow:
+    0 4px 15px rgba(15, 23, 42, 0.035);
+}
+
+.health-history-header {
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  margin-bottom: 18px;
+}
+
+.health-history-count {
+  display: inline-flex;
+
+  align-items: center;
+
+  min-height: 34px;
+
+  padding: 7px 12px;
+
+  border-radius: 20px;
+
+  background: #eff6ff;
+
+  color: #2563eb;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+.health-history-list {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 12px;
+}
+
+.health-history-card {
+  position: relative;
+
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 14px;
+
+  padding: 16px;
+
+  overflow: hidden;
+
+  background: #ffffff;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 12px;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.health-history-card::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+
+  top: 0;
+  bottom: 0;
+
+  width: 2px;
+
+  background: #2563eb;
+
+  opacity: 0;
+
+  transition: opacity 0.2s ease;
+}
+
+.health-history-card:hover {
+  transform: translateY(-1px);
+
+  border-color: #d8e0ea;
+
+  box-shadow:
+    0 6px 18px rgba(15, 23, 42, 0.06);
+}
+
+.health-history-card:hover::before {
+  opacity: 1;
+}
+
+.health-history-icon {
+  width: 42px;
+  height: 42px;
+
+  flex: 0 0 42px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+
+  background: #eff6ff;
+
+  font-size: 19px;
+}
+
+.health-history-content {
+  flex: 1;
+
+  min-width: 0;
+}
+
+.health-history-card-header {
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content: space-between;
+
+  gap: 15px;
+}
+
+.health-history-card-header h3 {
+  margin: 0 0 4px;
+
+  color: #172033;
+
+  font-size: 14px;
+}
+
+.health-history-date {
+  color: #6b7280;
+
+  font-size: 12px;
+}
+
+.health-history-status {
+  display: inline-flex;
+
+  align-items: center;
+
+  padding: 5px 9px;
+
+  border-radius: 20px;
+
+  background: #ecfdf3;
+
+  color: #15803d;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+.health-history-status.pending {
+  background: #fff7ed;
+  color: #c2410c;
+}
+
+.health-history-status.cancelled {
+  background: #fef2f2;
+  color: #dc2626;
+}
+
+.health-history-status.in-progress {
+  background: #eff6ff;
+  color: #2563eb;
+}
+
+.health-history-details {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 10px;
+
+  margin-top: 14px;
+
+  padding-top: 13px;
+
+  border-top: 1px solid #eef0f4;
+}
+
+.health-history-detail {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.health-history-detail-label {
+  color: #8a94a6;
+
+  font-size: 10px;
+}
+
+.health-history-detail strong {
+  color: #273246;
+
+  font-size: 12px;
+}
+
+.health-history-bill {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  margin-top: 11px;
+
+  padding: 6px 9px;
+
+  background: #f8fafc;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 7px;
+
+  color: #475569;
+
+  font-size: 10px;
+
+  font-weight: 600;
+}
+
+.health-history-empty {
+  position: relative;
+
+  padding: 38px 20px;
+
+  overflow: hidden;
+
+  text-align: center;
+
+  background: #f8fafc;
+
+  border: 1px dashed #d6dce6;
+
+  border-radius: 12px;
+}
+
+.health-history-empty::before {
+  content: "";
+
+  position: absolute;
+
+  width: 180px;
+  height: 180px;
+
+  top: -100px;
+  right: -70px;
+
+  border-radius: 50%;
+
+  background: rgba(37, 99, 235, 0.035);
+
+  pointer-events: none;
+}
+
+.health-history-empty-icon {
+  width: 52px;
+  height: 52px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  margin: 0 auto 12px;
+
+  border-radius: 50%;
+
+  background: #eef2f7;
+
+  font-size: 22px;
+}
+
+.health-history-empty h3 {
+  margin: 0 0 7px;
+
+  color: #172033;
+
+  font-size: 15px;
+}
+
+.health-history-empty p {
+  max-width: 450px;
+
+  margin: 0 auto 18px;
+
+  color: #6b7280;
+
+  font-size: 12px;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   MAINTENANCE STATUS
+========================================================= */
+
+.maintenance-status-section {
+  padding: 22px;
+
+  background: #ffffff;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 17px;
+
+  box-shadow:
+    0 4px 15px rgba(15, 23, 42, 0.035);
+}
+
+.maintenance-status-header > div:first-child span {
+  display: block;
+
+  color: #2563eb;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.8px;
+}
+
+.maintenance-status-badge {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-height: 31px;
+
+  padding: 6px 12px;
+
+  border-radius: 20px;
+
+  font-size: 11px;
+
+  font-weight: 800;
+}
+
+.maintenance-status-badge.good {
+  background: #ecfdf3;
+  color: #15803d;
+}
+
+.maintenance-status-badge.warning {
+  background: #fff7ed;
+  color: #c2410c;
+}
+
+.maintenance-status-badge.danger {
+  background: #fef2f2;
+  color: #dc2626;
+}
+
+.maintenance-status-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 12px;
+}
+
+.maintenance-status-grid > div {
+  padding: 14px;
+
+  background: #f8fafc;
+
+  border: 1px solid #eef1f5;
+
+  border-radius: 10px;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.maintenance-status-grid > div:hover {
+  background: #f9fbfd;
+
+  border-color: #dbe3ed;
+
+  transform: translateY(-1px);
+}
+
+.maintenance-status-grid span {
+  display: block;
+
+  margin-bottom: 6px;
+
+  color: #8a94a6;
+
+  font-size: 11px;
+}
+
+.maintenance-status-grid strong {
+  color: #273246;
+
+  font-size: 14px;
+}
+
+.maintenance-status-message {
+  margin-top: 16px;
+
+  padding: 14px 16px;
+
+  background: #f8fafc;
+
+  border-radius: 10px;
+
+  border-left: 4px solid #2563eb;
+}
+
+.maintenance-status-message strong {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #273246;
+
+  font-size: 13px;
+}
+
+.maintenance-status-message p {
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 12px;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   HEALTH SUMMARY
+========================================================= */
+
+.health-summary-section {
+  position: relative;
+
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 15px;
+
+  padding: 20px;
+
+  overflow: hidden;
+
+  background: #eff6ff;
+
+  border: 1px solid #bfdbfe;
+
+  border-radius: 16px;
+}
+
+.health-summary-section::after {
+  content: "";
+
+  position: absolute;
+
+  width: 140px;
+  height: 140px;
+
+  right: -55px;
+  bottom: -70px;
+
+  border: 20px solid rgba(37, 99, 235, 0.05);
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+.health-summary-icon {
+  width: 45px;
+  height: 45px;
+
+  flex: 0 0 45px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 11px;
+
+  background: #ffffff;
+
+  font-size: 21px;
+}
+
+.health-summary-section > div:last-child {
+  min-width: 0;
+}
+
+.health-summary-section > div:last-child > span {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #2563eb;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.8px;
+}
+
+.health-summary-section h2 {
+  margin: 0 0 6px;
+
+  color: #172033;
+
+  font-size: 17px;
+}
+
+.health-summary-section p {
+  margin: 0;
+
+  color: #475569;
+
+  font-size: 12px;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   1100px
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .health-page {
+    padding: 24px;
+  }
+
+  .health-overview-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .health-score-assessment {
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+  }
+
+  .health-chain-grid,
+  .health-oil-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .health-oil-checklist {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .maintenance-status-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   900px
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .health-page {
+    padding: 20px;
+  }
+
+  .health-selected-bike-section {
+    grid-template-columns:
+      140px
+      minmax(0, 1fr);
+  }
+
+  .health-selected-bike-image {
+    width: 140px;
+    height: 105px;
+  }
+
+  .health-selected-bike-score {
+    grid-column: 1 / -1;
+
+    flex-direction: row;
+
+    justify-content: flex-start;
+
+    padding-top: 15px;
+
+    border-top: 1px solid #eef0f4;
+  }
+
+  .health-detail-body {
+    grid-template-columns:
+      90px
+      minmax(0, 1fr);
+  }
+
+  .health-detail-info {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   768px
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .health-page {
+    padding: 16px;
+  }
+
+  .health-page-header {
+    flex-direction: column;
+
+    gap: 15px;
+  }
+
+  .health-page-header h1 {
+    font-size: 27px;
+  }
+
+  .health-refresh-btn {
+    align-self: flex-start;
+  }
+
+  .health-bike-selector-content {
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 15px;
+  }
+
+  .health-bike-select {
+    width: 100%;
+  }
+
+  .health-selected-bike-section {
+    grid-template-columns:
+      120px
+      minmax(0, 1fr);
+
+    gap: 16px;
+
+    padding: 16px;
+  }
+
+  .health-selected-bike-image {
+    width: 120px;
+    height: 95px;
+  }
+
+  .health-selected-bike-info h2 {
+    font-size: 18px;
+  }
+
+  .health-bike-meta {
+    gap: 15px;
+  }
+
+  .health-overview-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .health-detail-body {
+    grid-template-columns: 1fr;
+  }
+
+  .health-detail-score {
+    justify-content: flex-start;
+
+    margin-bottom: 5px;
+  }
+
+  .health-detail-info {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .health-chain-header,
+  .health-oil-header {
+    flex-direction: column;
+  }
+
+  /* H9 */
+  .health-score-header {
+    grid-template-columns: 1fr;
+  }
+
+  .health-overall-score-circle {
+    justify-self: center;
+  }
+
+  .health-score-assessment {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .health-guide-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .health-history-header {
+    flex-direction: column;
+
+    gap: 10px;
+  }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   600px
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .health-page {
+    padding: 12px;
+  }
+
+  .health-page-header {
+    margin-bottom: 18px;
+  }
+
+  .health-page-header h1 {
+    font-size: 24px;
+  }
+
+  .health-page-subtitle {
+    font-size: 13px;
+  }
+
+  .health-bike-selector-section,
+  .health-detail-section,
+  .health-chain-section,
+  .health-oil-section,
+  .health-score-section,
+  .health-alerts-section,
+  .health-history-section,
+  .maintenance-status-section {
+    padding: 16px;
+
+    border-radius: 14px;
+  }
+
+  .health-selected-bike-section {
+    grid-template-columns: 1fr;
+
+    text-align: center;
+  }
+
+  .health-selected-bike-image {
+    width: 100%;
+    height: 170px;
+
+    margin: 0 auto;
+  }
+
+  .health-bike-meta {
+    justify-content: center;
+  }
+
+  .health-selected-bike-score {
+    grid-column: auto;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    border-top: none;
+
+    padding-top: 0;
+  }
+
+  .health-section-header h2,
+  .health-alerts-header h2,
+  .health-history-header h2,
+  .maintenance-status-header h2 {
+    font-size: 19px;
+  }
+
+  .health-detail-header {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+  .health-detail-info {
+    grid-template-columns: 1fr;
+  }
+
+  .health-chain-grid,
+  .health-oil-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .health-oil-checklist {
+    grid-template-columns: 1fr;
+  }
+
+  /* H9 */
+  .health-score-section {
+    padding: 17px;
+  }
+
+  .health-score-header {
+    gap: 18px;
+  }
+
+  .health-score-header h2 {
+    font-size: 20px;
+  }
+
+  .health-score-header p {
+    font-size: 12px;
+  }
+
+  .health-overall-score-circle {
+    width: 105px;
+    height: 105px;
+
+    flex-basis: 105px;
+  }
+
+  .health-overall-score-circle span {
+    font-size: 27px;
+  }
+
+  .health-score-assessment {
+    grid-template-columns: 1fr;
+
+    gap: 9px;
+  }
+
+  .health-score-assessment-card {
+    min-height: 72px;
+
+    padding: 13px;
+  }
+
+  .health-component-scores {
+    padding: 16px;
+  }
+
+  .health-score-guide {
+    padding: 16px;
+  }
+
+  .health-guide-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .maintenance-status-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .health-alert-card {
+    padding: 13px;
+  }
+
+  .health-alert-title-row {
+    flex-wrap: wrap;
+  }
+
+  .health-history-card-header {
+    flex-direction: column;
+
+    gap: 8px;
+  }
+
+  .health-history-status {
+    align-self: flex-start;
+  }
+
+  .health-history-details {
+    grid-template-columns: 1fr;
+  }
+
+  .health-summary-section {
+    padding: 16px;
+  }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   420px
+========================================================= */
+
+@media (max-width: 420px) {
+
+  .health-page {
+    padding: 10px;
+  }
+
+  .health-page-header h1 {
+    font-size: 22px;
+  }
+
+  .health-page-eyebrow {
+    font-size: 10px;
+  }
+
+  .health-page-subtitle {
+    font-size: 12px;
+  }
+
+  .health-selected-bike-section {
+    padding: 14px;
+  }
+
+  .health-selected-bike-image {
+    height: 145px;
+  }
+
+  .health-selected-bike-info h2 {
+    font-size: 17px;
+  }
+
+  .health-bike-meta {
+    display: grid;
+
+    grid-template-columns:
+      repeat(3, 1fr);
+
+    gap: 8px;
+  }
+
+  .health-bike-meta strong {
+    font-size: 12px;
+  }
+
+  .health-card-icon {
+    width: 36px;
+    height: 36px;
+
+    font-size: 17px;
+  }
+
+  .health-overview-card {
+    padding: 15px;
+  }
+
+  .health-detail-title h2,
+  .health-chain-header h2,
+  .health-oil-header h2,
+  .health-score-header h2 {
+    font-size: 18px;
+  }
+
+  .health-chain-grid,
+  .health-oil-grid {
+    gap: 8px;
+  }
+
+  /* H9 */
+  .health-score-section {
+    padding: 14px;
+  }
+
+  .health-overall-score-circle {
+    width: 94px;
+    height: 94px;
+
+    flex-basis: 94px;
+
+    border-width: 7px;
+  }
+
+  .health-overall-score-circle span {
+    font-size: 25px;
+  }
+
+  .health-component-scores {
+    padding: 14px;
+  }
+
+  .health-score-guide {
+    padding: 14px;
+  }
+
+  .health-guide-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .health-alert-card {
+    gap: 9px;
+  }
+
+  .health-alert-icon {
+    width: 34px;
+    height: 34px;
+
+    flex-basis: 34px;
+
+    font-size: 16px;
+  }
+
+  .health-history-card {
+    gap: 10px;
+
+    padding: 13px;
+  }
+
+  .health-history-icon {
+    width: 36px;
+    height: 36px;
+
+    flex-basis: 36px;
+
+    font-size: 16px;
+  }
+
+  .health-summary-icon {
+    width: 38px;
+    height: 38px;
+
+    flex-basis: 38px;
+  }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   360px
+========================================================= */
+
+@media (max-width: 360px) {
+
+  .health-page {
+    padding: 8px;
+  }
+
+  .health-bike-meta {
+    grid-template-columns: 1fr;
+  }
+
+  .health-selected-bike-image {
+    height: 125px;
+  }
+
+  .health-score-circle {
+    width: 72px;
+    height: 72px;
+  }
+
+  .health-detail-score .health-score-circle {
+    width: 78px;
+    height: 78px;
+  }
+
+  .health-overall-score-circle {
+    width: 82px;
+    height: 82px;
+  }
+
+  .health-alert-title-row {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 5px;
+  }
+
+}
+
+
+/* =========================================================
+   FINAL UI POLISH
+========================================================= */
+
+.health-overview-section,
+.health-detail-section,
+.health-chain-section,
+.health-oil-section,
+.health-score-section,
+.health-alerts-section,
+.health-history-section,
+.maintenance-status-section {
+  position: relative;
+
+  transition:
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.health-overview-section:hover,
+.health-detail-section:hover,
+.health-chain-section:hover,
+.health-oil-section:hover,
+.health-score-section:hover,
+.health-alerts-section:hover,
+.health-history-section:hover,
+.maintenance-status-section:hover {
+  border-color: #d9e1eb;
+
+  box-shadow:
+    0 8px 24px rgba(15, 23, 42, 0.05);
+}
+
+.health-section-label,
+.health-page-eyebrow {
+  user-select: none;
+}
+
+.health-detail-status,
+.maintenance-status-badge,
+.health-history-status {
+  letter-spacing: 0.1px;
+}
+
+
+/* =========================================================
+   FINAL ALERT POLISH
+========================================================= */
+
+.health-alert-card::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+
+  top: 0;
+  bottom: 0;
+
+  width: 3px;
+}
+
+.health-alert-card-danger::before {
+  background: #dc2626;
+}
+
+.health-alert-card-warning::before {
+  background: #f59e0b;
+}
+
+.health-alert-card-info::before {
+  background: #2563eb;
+}
+
+.health-alert-card-success::before {
+  background: #16a34a;
+}
+
+
+/* =========================================================
+   FINAL HISTORY POLISH
+========================================================= */
+
+.health-history-card {
+  position: relative;
+
+  overflow: hidden;
+}
+
+.health-history-card::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+
+  top: 0;
+  bottom: 0;
+
+  width: 2px;
+
+  background: #2563eb;
+
+  opacity: 0;
+
+  transition: opacity 0.2s ease;
+}
+
+.health-history-card:hover::before {
+  opacity: 1;
+}
+
+
+/* =========================================================
+   FINAL IMAGE POLISH
+========================================================= */
+
+.health-selected-bike-image {
+  background:
+    linear-gradient(
+      135deg,
+      #f1f5f9,
+      #e8eef6
+    );
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+.health-page button:focus-visible,
+.health-page select:focus-visible {
+  outline: 3px solid rgba(37, 99, 235, 0.22);
+
+  outline-offset: 3px;
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .health-page *,
+  .health-page *::before,
+  .health-page *::after {
+    scroll-behavior: auto !important;
+
+    transition: none !important;
+
+    animation: none !important;
+  }
+
+}

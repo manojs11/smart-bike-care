@@ -1,0 +1,712 @@
+/* =========================================
+   MY BIKES PAGE
+========================================= */
+
+.my-bikes-page {
+  width: 100%;
+  min-height: 100%;
+  padding: 32px;
+  background: #f6f8fb;
+}
+
+
+/* =========================================
+   PAGE HEADER
+========================================= */
+
+.my-bikes-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.page-label {
+  display: inline-block;
+  margin-bottom: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: #2563eb;
+}
+
+.my-bikes-header h1 {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.my-bikes-header p {
+  margin: 8px 0 0;
+  color: #6b7280;
+  font-size: 15px;
+}
+
+
+/* =========================================
+   ADD BIKE BUTTON
+========================================= */
+
+.add-bike-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+
+  padding: 12px 20px;
+
+  border-radius: 10px;
+
+  background: #2563eb;
+  color: white;
+
+  text-decoration: none;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  transition: 0.2s ease;
+}
+
+.add-bike-btn span {
+  font-size: 20px;
+  line-height: 1;
+}
+
+.add-bike-btn:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+
+/* =========================================
+   SUMMARY
+========================================= */
+
+.bike-summary {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-bottom: 35px;
+}
+
+.summary-card {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  padding: 20px;
+
+  background: #ffffff;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+
+  box-shadow: 0 3px 12px rgba(15, 23, 42, 0.04);
+}
+
+.summary-icon {
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background: #eff6ff;
+
+  font-size: 23px;
+}
+
+.summary-card span {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: #6b7280;
+
+  font-size: 13px;
+}
+
+.summary-card strong {
+  display: block;
+
+  color: #111827;
+
+  font-size: 24px;
+}
+
+
+/* =========================================
+   SECTION TITLE
+========================================= */
+
+.bikes-section {
+  margin-bottom: 30px;
+}
+
+.section-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 18px;
+}
+
+.section-title-row h2 {
+  margin: 0;
+
+  font-size: 21px;
+  color: #111827;
+}
+
+.section-title-row p {
+  margin: 5px 0 0;
+
+  color: #6b7280;
+
+  font-size: 14px;
+}
+
+.bike-count {
+  padding: 7px 12px;
+
+  border-radius: 20px;
+
+  background: #ffffff;
+
+  border: 1px solid #e5e7eb;
+
+  color: #6b7280;
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+
+/* =========================================
+   BIKE GRID
+========================================= */
+
+.bike-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 22px;
+}
+
+
+/* =========================================
+   BIKE CARD
+========================================= */
+
+.bike-card {
+  overflow: hidden;
+
+  background: #ffffff;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 16px;
+
+  box-shadow:
+    0 5px 18px rgba(15, 23, 42, 0.05);
+
+  transition: 0.25s ease;
+}
+
+.bike-card:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 12px 28px rgba(15, 23, 42, 0.09);
+}
+
+
+/* =========================================
+   BIKE IMAGE
+========================================= */
+
+.bike-image {
+  position: relative;
+
+  height: 180px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background:
+    linear-gradient(
+      135deg,
+      #eaf2ff,
+      #f8fafc
+    );
+}
+
+.bike-emoji {
+  font-size: 95px;
+
+  filter:
+    drop-shadow(
+      0 10px 8px rgba(0, 0, 0, 0.15)
+    );
+}
+
+.bike-status {
+  position: absolute;
+
+  top: 14px;
+  right: 14px;
+
+  padding: 6px 10px;
+
+  border-radius: 20px;
+
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.bike-status.good {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.bike-status.warning {
+  background: #fef3c7;
+  color: #b45309;
+}
+
+
+/* =========================================
+   CARD CONTENT
+========================================= */
+
+.bike-card-content {
+  padding: 20px;
+}
+
+
+/* =========================================
+   BIKE TITLE
+========================================= */
+
+.bike-title {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  margin-bottom: 18px;
+}
+
+.bike-brand {
+  display: block;
+
+  margin-bottom: 3px;
+
+  color: #6b7280;
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.bike-title h3 {
+  margin: 0;
+
+  color: #111827;
+
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.more-btn {
+  width: 34px;
+  height: 34px;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 8px;
+
+  background: white;
+
+  color: #6b7280;
+
+  font-size: 20px;
+
+  cursor: pointer;
+}
+
+.more-btn:hover {
+  background: #f9fafb;
+}
+
+
+/* =========================================
+   BIKE DETAILS
+========================================= */
+
+.bike-details {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 10px;
+
+  padding: 15px 0;
+
+  border-top: 1px solid #f0f1f3;
+  border-bottom: 1px solid #f0f1f3;
+}
+
+.bike-detail-item span {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #9ca3af;
+
+  font-size: 11px;
+}
+
+.bike-detail-item strong {
+  display: block;
+
+  color: #374151;
+
+  font-size: 12px;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================
+   BIKE HEALTH
+========================================= */
+
+.bike-health {
+  padding: 17px 0;
+}
+
+.health-header {
+  display: flex;
+  justify-content: space-between;
+
+  margin-bottom: 8px;
+
+  font-size: 13px;
+}
+
+.health-header span {
+  color: #6b7280;
+}
+
+.health-header strong {
+  color: #15803d;
+}
+
+.health-bar {
+  width: 100%;
+  height: 7px;
+
+  overflow: hidden;
+
+  border-radius: 10px;
+
+  background: #e5e7eb;
+}
+
+.health-progress {
+  height: 100%;
+
+  border-radius: 10px;
+
+  background: #22c55e;
+
+  transition: width 0.4s ease;
+}
+
+
+/* =========================================
+   ACTIONS
+========================================= */
+
+.bike-actions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+}
+
+.view-bike-btn {
+  flex: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  padding: 11px;
+
+  border-radius: 9px;
+
+  background: #2563eb;
+  color: white;
+
+  text-decoration: none;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  transition: 0.2s ease;
+}
+
+.view-bike-btn:hover {
+  background: #1d4ed8;
+}
+
+.view-bike-btn span {
+  font-size: 17px;
+}
+
+.service-btn {
+  padding: 10px 16px;
+
+  border: 1px solid #dbeafe;
+
+  border-radius: 9px;
+
+  background: #eff6ff;
+
+  color: #2563eb;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.service-btn:hover {
+  background: #dbeafe;
+}
+
+
+/* =========================================
+   ADD ANOTHER BIKE
+========================================= */
+
+.add-bike-card {
+  display: flex;
+
+  align-items: center;
+
+  gap: 18px;
+
+  padding: 22px;
+
+  border: 1px dashed #bfdbfe;
+
+  border-radius: 14px;
+
+  background: #f8fbff;
+}
+
+.add-bike-icon {
+  width: 50px;
+  height: 50px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background: #dbeafe;
+
+  color: #2563eb;
+
+  font-size: 28px;
+}
+
+.add-bike-content {
+  flex: 1;
+}
+
+.add-bike-content h3 {
+  margin: 0 0 5px;
+
+  color: #111827;
+
+  font-size: 16px;
+}
+
+.add-bike-content p {
+  margin: 0;
+
+  color: #6b7280;
+
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.add-another-btn {
+  padding: 10px 17px;
+
+  border: 1px solid #2563eb;
+
+  border-radius: 9px;
+
+  background: white;
+
+  color: #2563eb;
+
+  text-decoration: none;
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.add-another-btn:hover {
+  background: #eff6ff;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1000px) {
+
+  .my-bikes-page {
+    padding: 25px;
+  }
+
+  .bike-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+  .my-bikes-page {
+    padding: 20px 16px;
+  }
+
+  .my-bikes-header {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 18px;
+  }
+
+  .my-bikes-header h1 {
+    font-size: 27px;
+  }
+
+  .add-bike-btn {
+    width: 100%;
+  }
+
+  .bike-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .section-title-row {
+    align-items: flex-start;
+
+    gap: 12px;
+
+    flex-direction: column;
+  }
+
+  .bike-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .add-bike-card {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+  .add-another-btn {
+    width: 100%;
+
+    text-align: center;
+  }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 450px) {
+
+  .my-bikes-page {
+    padding: 16px 12px;
+  }
+
+  .bike-details {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .bike-detail-item:last-child {
+    grid-column: span 2;
+  }
+
+  .bike-actions {
+    flex-direction: column;
+  }
+
+  .view-bike-btn,
+  .service-btn {
+    width: 100%;
+  }
+
+}
+.bike-card {
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.bike-card:hover {
+  transform: translateY(-2px);
+}
+
+.bike-card.selected {
+  border-color: #f97316;
+  box-shadow: 0 0 0 2px rgba(249, 115, 22, 0.12);
+}
+
+.selected-bike-badge {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  padding: 5px 9px;
+  border-radius: 6px;
+  background-color: #f97316;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+}

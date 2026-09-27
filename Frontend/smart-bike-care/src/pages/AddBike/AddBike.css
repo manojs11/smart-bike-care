@@ -1,0 +1,822 @@
+/* =========================================
+   ADD BIKE PAGE
+========================================= */
+
+.add-bike-page {
+  width: 100%;
+  min-height: 100%;
+
+  padding: 32px;
+
+  background: #f6f8fb;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.add-bike-header {
+  margin-bottom: 25px;
+}
+
+
+.back-link {
+  display: inline-block;
+
+  margin-bottom: 18px;
+
+  color: #2563eb;
+
+  text-decoration: none;
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+
+.back-link:hover {
+  color: #1d4ed8;
+}
+
+
+.page-label {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: #2563eb;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+}
+
+
+.add-bike-header h1 {
+  margin: 0;
+
+  color: #111827;
+
+  font-size: 30px;
+  font-weight: 700;
+}
+
+
+.add-bike-header p {
+  margin: 8px 0 0;
+
+  color: #6b7280;
+
+  font-size: 14px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================
+   MAIN LAYOUT
+========================================= */
+
+.add-bike-layout {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    330px;
+
+  gap: 24px;
+
+  align-items: start;
+}
+
+
+/* =========================================
+   FORM
+========================================= */
+
+.add-bike-form {
+  overflow: hidden;
+
+  background: #ffffff;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 16px;
+
+  box-shadow:
+    0 5px 18px rgba(15, 23, 42, 0.04);
+}
+
+
+.form-section {
+  padding: 26px;
+
+  border-bottom: 1px solid #eef0f3;
+}
+
+
+.form-section:last-of-type {
+  border-bottom: none;
+}
+
+
+/* =========================================
+   SECTION HEADING
+========================================= */
+
+.form-section-heading {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 13px;
+
+  margin-bottom: 25px;
+}
+
+
+.section-number {
+  width: 34px;
+  height: 34px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 9px;
+
+  background: #eff6ff;
+
+  color: #2563eb;
+
+  font-size: 11px;
+  font-weight: 800;
+}
+
+
+.form-section-heading h2 {
+  margin: 0 0 4px;
+
+  color: #111827;
+
+  font-size: 17px;
+  font-weight: 700;
+}
+
+
+.form-section-heading p {
+  margin: 0;
+
+  color: #9ca3af;
+
+  font-size: 12px;
+}
+
+
+/* =========================================
+   FORM ROW
+========================================= */
+
+.form-row {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 18px;
+}
+
+
+/* =========================================
+   FORM GROUP
+========================================= */
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+
+.form-group:last-child {
+  margin-bottom: 0;
+}
+
+
+.form-group label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #374151;
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+
+.form-group label span {
+  margin-left: 3px;
+
+  color: #ef4444;
+}
+
+
+/* =========================================
+   INPUTS
+========================================= */
+
+.form-group input,
+.form-group select {
+  width: 100%;
+
+  height: 45px;
+
+  padding: 0 13px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #d1d5db;
+
+  border-radius: 9px;
+
+  outline: none;
+
+  background: #ffffff;
+
+  color: #111827;
+
+  font-family: inherit;
+
+  font-size: 13px;
+
+  transition: all 0.2s ease;
+}
+
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #2563eb;
+
+  box-shadow:
+    0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+
+.form-group select {
+  cursor: pointer;
+}
+
+
+.form-group select:disabled {
+  background: #f9fafb;
+
+  color: #9ca3af;
+
+  cursor: not-allowed;
+}
+
+
+.form-group input::placeholder {
+  color: #9ca3af;
+}
+
+
+/* =========================================
+   INPUT ERROR
+========================================= */
+
+.form-group input.input-error,
+.form-group select.input-error {
+  border-color: #ef4444;
+}
+
+
+.error-message {
+  display: block;
+
+  margin-top: 6px;
+
+  color: #dc2626;
+
+  font-size: 11px;
+}
+
+
+.input-help {
+  margin-top: 6px;
+
+  color: #9ca3af;
+
+  font-size: 11px;
+}
+
+
+/* =========================================
+   ODOMETER INPUT
+========================================= */
+
+.input-with-unit {
+  position: relative;
+}
+
+
+.input-with-unit input {
+  padding-right: 45px;
+}
+
+
+.input-with-unit span {
+  position: absolute;
+
+  top: 50%;
+  right: 13px;
+
+  transform: translateY(-50%);
+
+  color: #6b7280;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  pointer-events: none;
+}
+
+
+/* =========================================
+   IMAGE UPLOAD
+========================================= */
+
+.image-upload {
+  width: 100%;
+}
+
+
+.upload-box {
+  width: 100%;
+  min-height: 150px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  box-sizing: border-box;
+
+  padding: 25px;
+
+  border: 2px dashed #bfdbfe;
+
+  border-radius: 12px;
+
+  background: #f8fbff;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+
+.upload-box:hover {
+  border-color: #2563eb;
+
+  background: #f1f7ff;
+}
+
+
+.upload-content {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  text-align: center;
+}
+
+
+.upload-icon {
+  width: 46px;
+  height: 46px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 10px;
+
+  border-radius: 12px;
+
+  background: #dbeafe;
+
+  font-size: 21px;
+}
+
+
+.upload-content strong {
+  margin-bottom: 5px;
+
+  color: #374151;
+
+  font-size: 13px;
+}
+
+
+.upload-content span {
+  color: #9ca3af;
+
+  font-size: 11px;
+}
+
+
+/* =========================================
+   SELECTED IMAGE
+========================================= */
+
+.selected-image {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  text-align: center;
+}
+
+
+.uploaded-icon {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 9px;
+
+  border-radius: 50%;
+
+  background: #dcfce7;
+
+  color: #15803d;
+
+  font-weight: 800;
+}
+
+
+.selected-image strong {
+  max-width: 350px;
+
+  overflow: hidden;
+
+  margin-bottom: 5px;
+
+  color: #374151;
+
+  font-size: 13px;
+
+  white-space: nowrap;
+
+  text-overflow: ellipsis;
+}
+
+
+.selected-image span {
+  color: #2563eb;
+
+  font-size: 11px;
+}
+
+
+/* =========================================
+   FORM ACTIONS
+========================================= */
+
+.form-actions {
+  display: flex;
+
+  align-items: center;
+  justify-content: flex-end;
+
+  gap: 12px;
+
+  padding: 20px 26px;
+
+  background: #fafbfc;
+
+  border-top: 1px solid #eef0f3;
+}
+
+
+.cancel-btn,
+.save-bike-btn {
+  height: 42px;
+
+  padding: 0 20px;
+
+  border-radius: 9px;
+
+  font-family: inherit;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+
+.cancel-btn {
+  border: 1px solid #d1d5db;
+
+  background: #ffffff;
+
+  color: #4b5563;
+}
+
+
+.cancel-btn:hover {
+  background: #f9fafb;
+}
+
+
+.save-bike-btn {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  border: none;
+
+  background: #2563eb;
+
+  color: #ffffff;
+}
+
+
+.save-bike-btn:hover {
+  background: #1d4ed8;
+
+  box-shadow:
+    0 5px 14px rgba(37, 99, 235, 0.2);
+}
+
+
+.save-bike-btn span {
+  font-size: 14px;
+}
+
+
+/* =========================================
+   SIDE INFORMATION PANEL
+========================================= */
+
+.bike-info-panel {
+  position: sticky;
+
+  top: 20px;
+
+  padding: 25px;
+
+  border-radius: 16px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #0f172a,
+      #172554
+    );
+
+  color: #ffffff;
+
+  box-shadow:
+    0 8px 25px rgba(15, 23, 42, 0.15);
+}
+
+
+.info-bike-icon {
+  width: 55px;
+  height: 55px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 18px;
+
+  border-radius: 14px;
+
+  background: rgba(255, 255, 255, 0.1);
+
+  font-size: 27px;
+}
+
+
+.bike-info-panel h2 {
+  margin: 0 0 10px;
+
+  font-size: 20px;
+}
+
+
+.bike-info-panel > p {
+  margin: 0;
+
+  color: #cbd5e1;
+
+  font-size: 12px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================
+   INFO LIST
+========================================= */
+
+.info-list {
+  margin-top: 25px;
+
+  padding-top: 20px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+.info-item {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 10px;
+
+  margin-bottom: 19px;
+}
+
+
+.info-item:last-child {
+  margin-bottom: 0;
+}
+
+
+.info-item > span {
+  width: 21px;
+  height: 21px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 1px;
+
+  border-radius: 50%;
+
+  background: rgba(34, 197, 94, 0.15);
+
+  color: #86efac;
+
+  font-size: 11px;
+}
+
+
+.info-item strong {
+  display: block;
+
+  margin-bottom: 3px;
+
+  color: #ffffff;
+
+  font-size: 12px;
+}
+
+
+.info-item small {
+  display: block;
+
+  color: #94a3b8;
+
+  font-size: 10px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1000px) {
+
+  .add-bike-page {
+    padding: 25px;
+  }
+
+
+  .add-bike-layout {
+    grid-template-columns: 1fr;
+  }
+
+
+  .bike-info-panel {
+    position: static;
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+  .add-bike-page {
+    padding: 20px 16px;
+  }
+
+
+  .add-bike-header h1 {
+    font-size: 27px;
+  }
+
+
+  .form-section {
+    padding: 20px;
+  }
+
+
+  .form-row {
+    grid-template-columns: 1fr;
+
+    gap: 0;
+  }
+
+
+  .form-actions {
+    padding: 18px 20px;
+
+    flex-direction: column-reverse;
+  }
+
+
+  .cancel-btn,
+  .save-bike-btn {
+    width: 100%;
+  }
+
+
+  .bike-info-panel {
+    padding: 22px;
+  }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 450px) {
+
+  .add-bike-page {
+    padding: 16px 12px;
+  }
+
+
+  .form-section {
+    padding: 17px;
+  }
+
+
+  .form-section-heading {
+    gap: 10px;
+  }
+
+
+  .section-number {
+    width: 30px;
+    height: 30px;
+  }
+
+
+  .upload-box {
+    min-height: 135px;
+
+    padding: 18px;
+  }
+
+}

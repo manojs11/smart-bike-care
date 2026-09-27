@@ -1,0 +1,2705 @@
+/* =========================================================
+   GARAGE MAP WRAPPER
+   ========================================================= */
+
+.garage-map-wrapper {
+  width: 100%;
+  height: auto;
+  min-height: 0;
+
+  background: #f6f8fb;
+
+  border-radius: 14px;
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   TOOLBAR
+   ========================================================= */
+
+.garage-map-toolbar {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 12px;
+
+  background: #ffffff;
+
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.garage-search-box {
+  flex: 1;
+
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 0 11px;
+
+  border: 1px solid #dfe4ea;
+
+  border-radius: 9px;
+
+  background: #ffffff;
+}
+
+.garage-search-icon {
+  font-size: 15px;
+}
+
+.garage-search-box input {
+  width: 100%;
+
+  flex: 1;
+
+  min-width: 0;
+
+  border: none;
+
+  outline: none;
+
+  background: transparent;
+
+  font-size: 13px;
+
+  color: #111827;
+}
+
+.garage-search-box input::placeholder {
+  color: #9ca3af;
+}
+
+.garage-search-clear {
+  border: none;
+
+  background: transparent;
+
+  color: #6b7280;
+
+  cursor: pointer;
+
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   TOOLBAR BUTTONS
+   ========================================================= */
+
+.garage-filter-toggle,
+.garage-location-button {
+  height: 42px;
+
+  padding: 0 13px;
+
+  border: 1px solid #dfe4ea;
+
+  border-radius: 9px;
+
+  background: #ffffff;
+
+  color: #374151;
+
+  cursor: pointer;
+
+  font-size: 12px;
+
+  font-weight: 650;
+
+  white-space: nowrap;
+
+  transition: 0.2s ease;
+}
+
+.garage-filter-toggle:hover {
+  background: #f8fafc;
+}
+
+.garage-filter-toggle.active {
+  background: #111827;
+
+  color: #ffffff;
+
+  border-color: #111827;
+}
+
+.garage-location-button {
+  background: #2563eb;
+
+  color: #ffffff;
+
+  border-color: #2563eb;
+}
+
+.garage-location-button:hover {
+  background: #1d4ed8;
+}
+
+.garage-location-button:disabled {
+  opacity: 0.6;
+
+  cursor: not-allowed;
+}
+
+
+/* =========================================================
+   ADVANCED FILTERS
+   ========================================================= */
+
+.garage-advanced-filters {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  align-items: end;
+
+  gap: 10px;
+
+  padding: 12px;
+
+  background: #ffffff;
+
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.garage-filter-group {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
+
+  min-width: 135px;
+}
+
+.garage-filter-group label {
+  font-size: 11px;
+
+  font-weight: 700;
+
+  color: #64748b;
+}
+
+.garage-filter-group select {
+  height: 37px;
+
+  padding: 0 9px;
+
+  border: 1px solid #dfe4ea;
+
+  border-radius: 7px;
+
+  background: #ffffff;
+
+  outline: none;
+
+  color: #374151;
+
+  font-size: 12px;
+
+  cursor: pointer;
+}
+
+.garage-filter-group select:focus {
+  border-color: #2563eb;
+}
+
+.garage-clear-filters {
+  height: 37px;
+
+  padding: 0 12px;
+
+  border: none;
+
+  border-radius: 7px;
+
+  background: #fef2f2;
+
+  color: #dc2626;
+
+  cursor: pointer;
+
+  font-size: 11px;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   WARNING
+   ========================================================= */
+
+.garage-warning {
+  padding: 8px 12px;
+
+  background: #fff7ed;
+
+  border-bottom: 1px solid #fed7aa;
+
+  color: #9a3412;
+
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   MAIN MAP + RESULTS
+   ========================================================= */
+
+/*
+   IMPORTANT:
+   Smaller overall layout.
+
+   LEFT  = MAP
+   RIGHT = GARAGE CARDS
+*/
+
+.garage-map-content {
+  width: 100%;
+
+  height: 520px;
+
+  display: grid;
+
+  grid-template-columns: 55% 45%;
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   MAP
+   ========================================================= */
+
+.garage-real-map {
+  position: relative;
+
+  width: 100%;
+
+  height: 520px;
+
+  overflow: hidden;
+
+  background: #e5e7eb;
+}
+
+.garage-real-map > div {
+  width: 100%;
+
+  height: 100%;
+}
+
+
+/* =========================================================
+   CURRENT LOCATION BUTTON
+   ========================================================= */
+
+.garage-map-current-location {
+  position: absolute;
+
+  left: 12px;
+
+  bottom: 72px;
+
+  z-index: 20;
+
+  width: 40px;
+
+  height: 40px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 8px;
+
+  background: #ffffff;
+
+  color: #111827;
+
+  box-shadow:
+    0 2px 7px rgba(0, 0, 0, 0.20);
+
+  cursor: pointer;
+
+  font-size: 18px;
+
+  transition: 0.2s ease;
+}
+
+.garage-map-current-location:hover {
+  background: #f8fafc;
+
+  transform: scale(1.04);
+}
+
+.garage-map-current-location:disabled {
+  opacity: 0.6;
+
+  cursor: wait;
+}
+
+
+/* =========================================================
+   USER MARKER
+   ========================================================= */
+
+.garage-user-marker {
+  width: 26px;
+
+  height: 26px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: rgba(37, 99, 235, 0.18);
+}
+
+.garage-user-marker-dot {
+  width: 11px;
+
+  height: 11px;
+
+  border-radius: 50%;
+
+  background: #2563eb;
+
+  border: 3px solid #ffffff;
+
+  box-shadow:
+    0 1px 5px rgba(0, 0, 0, 0.35);
+}
+
+
+/* =========================================================
+   GARAGE MAP MARKER
+   ========================================================= */
+
+.garage-map-marker {
+  width: 34px;
+
+  height: 34px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  border: 2px solid #111827;
+
+  box-shadow:
+    0 2px 7px rgba(0, 0, 0, 0.25);
+
+  cursor: pointer;
+
+  font-size: 17px;
+
+  transition: 0.2s ease;
+}
+
+.garage-map-marker:hover {
+  transform: scale(1.1);
+}
+
+.garage-map-marker.selected {
+  transform: scale(1.2);
+
+  border-width: 3px;
+}
+
+
+/* =========================================================
+   INFO WINDOW
+   ========================================================= */
+
+.garage-info-window {
+  min-width: 220px;
+
+  padding: 3px;
+}
+
+.garage-info-window strong {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #111827;
+
+  font-size: 14px;
+}
+
+.garage-info-rating {
+  margin-bottom: 5px;
+
+  font-size: 12px;
+}
+
+.garage-info-address {
+  color: #64748b;
+
+  font-size: 11px;
+
+  line-height: 1.4;
+}
+
+.garage-info-distance {
+  margin-top: 5px;
+
+  color: #2563eb;
+
+  font-size: 11px;
+
+  font-weight: 700;
+}
+
+.garage-info-buttons {
+  display: flex;
+
+  gap: 6px;
+
+  margin-top: 9px;
+}
+
+.garage-info-buttons button {
+  padding: 6px 8px;
+
+  border: none;
+
+  border-radius: 6px;
+
+  background: #111827;
+
+  color: #ffffff;
+
+  cursor: pointer;
+
+  font-size: 10px;
+
+  font-weight: 650;
+}
+
+
+/* =========================================================
+   RIGHT SIDE RESULTS
+   ========================================================= */
+
+.garage-results-panel {
+  width: 100%;
+
+  height: 520px;
+
+  min-width: 0;
+
+  background: #f8fafc;
+
+  border-left: 1px solid #e5e7eb;
+
+  overflow-y: auto;
+
+  scrollbar-width: thin;
+
+  scrollbar-color: #cbd5e1 transparent;
+}
+
+.garage-results-panel::-webkit-scrollbar {
+  width: 5px;
+}
+
+.garage-results-panel::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.garage-results-panel::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+
+  border-radius: 10px;
+}
+
+
+/* =========================================================
+   RESULTS HEADER
+   ========================================================= */
+
+.garage-results-header {
+  position: sticky;
+
+  top: 0;
+
+  z-index: 10;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  padding: 12px 14px;
+
+  background: rgba(255, 255, 255, 0.96);
+
+  border-bottom: 1px solid #e5e7eb;
+
+  backdrop-filter: blur(8px);
+}
+
+.garage-results-header h3 {
+  margin: 0;
+
+  color: #111827;
+
+  font-size: 15px;
+
+  font-weight: 750;
+}
+
+.garage-results-header p {
+  margin: 3px 0 0;
+
+  color: #64748b;
+
+  font-size: 10px;
+}
+
+.garage-loading-small {
+  color: #64748b;
+
+  font-size: 10px;
+}
+
+
+/* =========================================================
+   ACTIVE FILTERS
+   ========================================================= */
+
+.garage-active-filters {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 5px;
+
+  padding: 8px 12px;
+
+  background: #ffffff;
+
+  border-bottom: 1px solid #edf0f4;
+}
+
+.garage-filter-chip {
+  padding: 4px 7px;
+
+  border-radius: 15px;
+
+  background: #eff6ff;
+
+  color: #2563eb;
+
+  font-size: 9px;
+
+  font-weight: 650;
+}
+
+.garage-clear-chip {
+  border: none;
+
+  background: transparent;
+
+  color: #dc2626;
+
+  cursor: pointer;
+
+  font-size: 9px;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   RESULTS LIST
+   ========================================================= */
+
+.garage-results-list {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 9px;
+
+  padding: 10px;
+}
+
+
+/* =========================================================
+   GARAGE CARD
+   ========================================================= */
+
+.garage-result-card {
+  position: relative;
+
+  width: 100%;
+
+  min-height: 125px;
+
+  display: flex;
+
+  overflow: hidden;
+
+  background: #ffffff;
+
+  border: 1px solid #e6eaf0;
+
+  border-radius: 11px;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 2px 6px rgba(15, 23, 42, 0.04);
+
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    border-color 0.18s ease;
+}
+
+.garage-result-card:hover {
+  transform: translateY(-2px);
+
+  border-color: #cbd5e1;
+
+  box-shadow:
+    0 6px 16px rgba(15, 23, 42, 0.08);
+}
+
+.garage-result-card-selected {
+  border-color: #2563eb;
+
+  box-shadow:
+    0 0 0 2px rgba(37, 99, 235, 0.08);
+}
+
+.garage-result-card-selected::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+
+  top: 12px;
+
+  bottom: 12px;
+
+  width: 3px;
+
+  border-radius: 0 4px 4px 0;
+
+  background: #2563eb;
+
+  z-index: 5;
+}
+
+
+/* =========================================================
+   CARD IMAGE
+   ========================================================= */
+
+.garage-result-card-image {
+  position: relative;
+
+  flex: 0 0 105px;
+
+  width: 105px;
+
+  min-height: 125px;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      135deg,
+      #eef2f7,
+      #e2e8f0
+    );
+}
+
+.garage-result-card-image img {
+  width: 100%;
+
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition: transform 0.3s ease;
+}
+
+.garage-result-card:hover
+.garage-result-card-image img {
+  transform: scale(1.05);
+}
+
+.garage-result-card-image::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.25),
+      transparent 60%
+    );
+
+  pointer-events: none;
+}
+
+.garage-result-card-placeholder {
+  width: 100%;
+
+  height: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 30px;
+}
+
+
+/* =========================================================
+   NEAREST BADGE
+   ========================================================= */
+
+.garage-nearest-badge {
+  position: absolute;
+
+  top: 7px;
+
+  left: 7px;
+
+  z-index: 4;
+
+  padding: 3px 6px;
+
+  border-radius: 12px;
+
+  background: rgba(17, 24, 39, 0.88);
+
+  color: #ffffff;
+
+  font-size: 8px;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   CARD BODY
+   ========================================================= */
+
+.garage-result-card-body {
+  flex: 1;
+
+  min-width: 0;
+
+  padding: 10px;
+
+  display: flex;
+
+  flex-direction: column;
+}
+
+
+/* =========================================================
+   CARD TOP
+   ========================================================= */
+
+.garage-result-card-top {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: flex-start;
+
+  gap: 5px;
+}
+
+.garage-result-card-top h4 {
+  margin: 0;
+
+  color: #111827;
+
+  font-size: 12px;
+
+  font-weight: 750;
+
+  line-height: 1.3;
+
+  display: -webkit-box;
+
+  -webkit-line-clamp: 2;
+
+  -webkit-box-orient: vertical;
+
+  overflow: hidden;
+}
+
+.garage-result-type {
+  display: block;
+
+  margin-top: 2px;
+
+  color: #64748b;
+
+  font-size: 9px;
+
+  font-weight: 550;
+}
+
+
+/* =========================================================
+   OPERATIONAL STATUS
+   ========================================================= */
+
+.garage-operational {
+  flex-shrink: 0;
+
+  padding: 3px 6px !important;
+
+  margin: 0 !important;
+
+  border-radius: 12px;
+
+  background: #ecfdf5;
+
+  color: #047857 !important;
+
+  font-size: 7px !important;
+
+  font-weight: 800;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   RATING
+   ========================================================= */
+
+.garage-result-rating {
+  margin-top: 5px;
+
+  color: #111827;
+
+  font-size: 10px;
+
+  font-weight: 750;
+}
+
+.garage-result-rating span {
+  color: #94a3b8;
+
+  font-size: 9px;
+
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   ADDRESS
+   ========================================================= */
+
+.garage-result-address {
+  margin: 4px 0 0;
+
+  color: #64748b;
+
+  font-size: 8.5px;
+
+  line-height: 1.35;
+
+  display: -webkit-box;
+
+  -webkit-line-clamp: 2;
+
+  -webkit-box-orient: vertical;
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   DISTANCE
+   ========================================================= */
+
+.garage-result-distance {
+  margin: 4px 0 0;
+
+  color: #2563eb;
+
+  font-size: 9px;
+
+  font-weight: 750;
+}
+
+
+/* =========================================================
+   CARD ACTIONS
+   ========================================================= */
+
+.garage-result-card-actions {
+  display: flex;
+
+  gap: 5px;
+
+  margin-top: auto;
+
+  padding-top: 7px;
+}
+
+.garage-result-card-actions button {
+  min-height: 27px;
+
+  padding: 4px 7px;
+
+  border-radius: 6px;
+
+  cursor: pointer;
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  transition: 0.18s ease;
+}
+
+.garage-result-card-actions button:hover {
+  transform: translateY(-1px);
+}
+
+
+/* Call */
+
+.garage-call-button {
+  flex: 1;
+
+  border: 1px solid #dbe2ea;
+
+  background: #ffffff;
+
+  color: #334155;
+}
+
+.garage-call-button:hover {
+  background: #f8fafc;
+}
+
+
+/* Directions */
+
+.garage-direction-button {
+  flex: 1;
+
+  border: 1px solid #2563eb;
+
+  background: #2563eb;
+
+  color: #ffffff;
+
+  box-shadow:
+    0 2px 5px rgba(37, 99, 235, 0.18);
+}
+
+.garage-direction-button:hover {
+  background: #1d4ed8;
+}
+
+
+/* Details */
+
+.garage-details-button {
+  flex: 0 0 auto;
+
+  border: 1px solid #dbe2ea;
+
+  background: #f8fafc;
+
+  color: #475569;
+}
+
+.garage-details-button:hover {
+  background: #eef2f7;
+}
+
+.garage-result-card-actions button:disabled {
+  opacity: 0.45;
+
+  cursor: not-allowed;
+
+  transform: none;
+}
+
+
+/* =========================================================
+   LOADING
+   ========================================================= */
+
+.garage-loading-card {
+  margin: 10px;
+
+  padding: 30px 15px;
+
+  text-align: center;
+
+  background: #ffffff;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 10px;
+}
+
+.garage-loading-spinner {
+  width: 28px;
+
+  height: 28px;
+
+  margin: 0 auto 10px;
+
+  border: 3px solid #e5e7eb;
+
+  border-top-color: #2563eb;
+
+  border-radius: 50%;
+
+  animation: garage-spin 0.8s linear infinite;
+}
+
+@keyframes garage-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.garage-loading-card h4 {
+  margin: 0;
+
+  font-size: 13px;
+}
+
+.garage-loading-card p {
+  margin: 6px 0 0;
+
+  color: #6b7280;
+
+  font-size: 10px;
+}
+
+
+/* =========================================================
+   EMPTY
+   ========================================================= */
+
+.garage-empty-card {
+  margin: 10px;
+
+  padding: 30px 15px;
+
+  text-align: center;
+
+  background: #ffffff;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 10px;
+}
+
+.garage-empty-icon {
+  margin-bottom: 7px;
+
+  font-size: 28px;
+}
+
+.garage-empty-card h4 {
+  margin: 0;
+
+  font-size: 14px;
+}
+
+.garage-empty-card p {
+  margin: 6px 0 13px;
+
+  color: #6b7280;
+
+  font-size: 10px;
+}
+
+.garage-empty-clear {
+  padding: 7px 11px;
+
+  border: none;
+
+  border-radius: 6px;
+
+  background: #111827;
+
+  color: #ffffff;
+
+  cursor: pointer;
+
+  font-size: 10px;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   DETAILS MODAL
+   ========================================================= */
+
+.garage-details-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 1000;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 20px;
+
+  background: rgba(0, 0, 0, 0.55);
+}
+
+.garage-details-modal {
+  position: relative;
+
+  width: min(600px, 100%);
+
+  max-height: 90vh;
+
+  overflow-y: auto;
+
+  background: #ffffff;
+
+  border-radius: 15px;
+
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.25);
+}
+
+.garage-details-close {
+  position: absolute;
+
+  top: 10px;
+
+  right: 10px;
+
+  z-index: 5;
+
+  width: 33px;
+
+  height: 33px;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background: rgba(17, 24, 39, 0.8);
+
+  color: #ffffff;
+
+  cursor: pointer;
+
+  font-size: 15px;
+}
+
+
+/* =========================================================
+   DETAILS PHOTO
+   ========================================================= */
+
+.garage-details-photo {
+  position: relative;
+
+  width: 100%;
+
+  height: 270px;
+
+  overflow: hidden;
+
+  background: #f3f4f6;
+}
+
+.garage-details-photo img {
+  width: 100%;
+
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+}
+
+.garage-details-photo-placeholder {
+  width: 100%;
+
+  height: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 55px;
+}
+
+
+/* =========================================================
+   PHOTO NAVIGATION
+   ========================================================= */
+
+.garage-photo-prev,
+.garage-photo-next {
+  position: absolute;
+
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  width: 37px;
+
+  height: 37px;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background: rgba(17, 24, 39, 0.75);
+
+  color: #ffffff;
+
+  cursor: pointer;
+
+  font-size: 25px;
+}
+
+.garage-photo-prev {
+  left: 12px;
+}
+
+.garage-photo-next {
+  right: 12px;
+}
+
+
+/* =========================================================
+   THUMBNAILS
+   ========================================================= */
+
+.garage-photo-thumbnails {
+  display: flex;
+
+  gap: 6px;
+
+  overflow-x: auto;
+
+  padding: 9px 12px;
+
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.garage-photo-thumbnails button {
+  flex: 0 0 53px;
+
+  width: 53px;
+
+  height: 43px;
+
+  padding: 0;
+
+  overflow: hidden;
+
+  border: 2px solid transparent;
+
+  border-radius: 6px;
+
+  background: #f3f4f6;
+
+  cursor: pointer;
+}
+
+.garage-photo-thumbnails button.active {
+  border-color: #2563eb;
+}
+
+.garage-photo-thumbnails img {
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: cover;
+}
+
+
+/* =========================================================
+   DETAILS CONTENT
+   ========================================================= */
+
+.garage-details-content {
+  padding: 18px;
+}
+
+.garage-details-title-row {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: flex-start;
+
+  gap: 10px;
+}
+
+.garage-details-title-row h2 {
+  margin: 0;
+
+  color: #111827;
+
+  font-size: 20px;
+}
+
+.garage-details-title-row span {
+  display: inline-block;
+
+  margin-top: 3px;
+
+  color: #6b7280;
+
+  font-size: 11px;
+}
+
+.garage-details-status {
+  padding: 5px 8px !important;
+
+  margin: 0 !important;
+
+  border-radius: 6px;
+
+  background: #dcfce7;
+
+  color: #166534 !important;
+
+  font-size: 9px !important;
+
+  font-weight: 700;
+}
+
+.garage-details-rating {
+  margin-top: 9px;
+
+  font-size: 12px;
+
+  font-weight: 700;
+}
+
+.garage-details-rating span {
+  color: #6b7280;
+
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   DETAILS SECTIONS
+   ========================================================= */
+
+.garage-details-section {
+  margin-top: 16px;
+
+  padding-top: 14px;
+
+  border-top: 1px solid #eef0f4;
+}
+
+.garage-details-section h4 {
+  margin: 0 0 6px;
+
+  color: #111827;
+
+  font-size: 12px;
+}
+
+.garage-details-section p {
+  margin: 0;
+
+  color: #4b5563;
+
+  font-size: 12px;
+
+  line-height: 1.5;
+}
+
+.garage-details-section small {
+  display: block;
+
+  margin-top: 5px;
+
+  color: #6b7280;
+
+  font-size: 10px;
+}
+
+.garage-details-section a {
+  color: #2563eb;
+
+  font-size: 12px;
+
+  text-decoration: none;
+}
+
+
+/* =========================================================
+   HOURS
+   ========================================================= */
+
+.garage-hours-heading {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+}
+
+.garage-hours-heading h4 {
+  margin: 0;
+}
+
+.garage-hours-heading span {
+  padding: 4px 6px;
+
+  border-radius: 5px;
+
+  background: #f3f4f6;
+
+  color: #6b7280;
+
+  font-size: 8px;
+}
+
+.garage-opening-hours {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.garage-opening-hour-row {
+  padding: 6px 8px;
+
+  border-radius: 5px;
+
+  background: #f9fafb;
+
+  color: #4b5563;
+
+  font-size: 10px;
+}
+
+.garage-no-hours {
+  padding: 9px;
+
+  border-radius: 6px;
+
+  background: #f9fafb;
+
+  color: #6b7280 !important;
+
+  font-size: 10px !important;
+}
+
+
+/* =========================================================
+   ACTION MESSAGE
+   ========================================================= */
+
+.garage-action-message {
+  margin-top: 13px;
+
+  padding: 8px 10px;
+
+  border-radius: 6px;
+
+  background: #ecfdf5;
+
+  color: #047857;
+
+  font-size: 11px;
+
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   PRIMARY ACTIONS
+   ========================================================= */
+
+.garage-details-actions {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 7px;
+
+  margin-top: 16px;
+}
+
+.garage-action-primary {
+  min-height: 40px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 7px;
+
+  border: none;
+
+  border-radius: 7px;
+
+  background: #111827;
+
+  color: #ffffff;
+
+  cursor: pointer;
+
+  text-decoration: none;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  transition: 0.2s ease;
+}
+
+.garage-action-primary:hover {
+  background: #2563eb;
+}
+
+
+/* =========================================================
+   SECONDARY ACTIONS
+   ========================================================= */
+
+.garage-secondary-actions {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 7px;
+
+  margin-top: 9px;
+}
+
+.garage-secondary-actions button {
+  min-height: 34px;
+
+  padding: 6px 9px;
+
+  border: 1px solid #d1d5db;
+
+  border-radius: 7px;
+
+  background: #ffffff;
+
+  color: #374151;
+
+  cursor: pointer;
+
+  font-size: 9px;
+
+  font-weight: 700;
+}
+
+.garage-secondary-actions button:hover {
+  background: #f8fafc;
+}
+
+.garage-details-note {
+  margin: 13px 0 0;
+
+  color: #9ca3af;
+
+  font-size: 9px;
+
+  line-height: 1.5;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+  .garage-map-content {
+    height: auto;
+
+    display: grid;
+
+    grid-template-columns: 1fr;
+  }
+
+  .garage-real-map {
+    width: 100%;
+
+    height: 420px;
+
+    min-height: 420px;
+  }
+
+  .garage-results-panel {
+    width: 100%;
+
+    height: auto;
+
+    max-height: none;
+
+    border-left: none;
+
+    border-top: 1px solid #e5e7eb;
+  }
+
+  .garage-results-list {
+    display: grid;
+
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 10px;
+  }
+
+  .garage-result-card {
+    min-height: 125px;
+  }
+}
+
+
+/* =========================================================
+   TABLET SMALL
+   ========================================================= */
+
+@media (max-width: 750px) {
+
+  .garage-results-list {
+    grid-template-columns: 1fr;
+  }
+
+  .garage-real-map {
+    height: 400px;
+
+    min-height: 400px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .garage-map-toolbar {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 7px;
+
+    padding: 9px;
+  }
+
+  .garage-search-box {
+    grid-column: 1 / -1;
+
+    width: 100%;
+
+    height: 40px;
+  }
+
+  .garage-filter-toggle,
+  .garage-location-button {
+    width: 100%;
+
+    height: 40px;
+
+    font-size: 11px;
+  }
+
+  .garage-advanced-filters {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 8px;
+
+    padding: 9px;
+  }
+
+  .garage-filter-group {
+    min-width: 0;
+  }
+
+  .garage-filter-group select {
+    width: 100%;
+
+    height: 36px;
+  }
+
+  .garage-clear-filters {
+    grid-column: 1 / -1;
+
+    width: 100%;
+  }
+
+
+  /* MAP */
+
+  .garage-real-map {
+    height: 350px;
+
+    min-height: 350px;
+  }
+
+
+  /* RESULTS */
+
+  .garage-results-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 9px;
+
+    padding: 9px;
+  }
+
+  .garage-results-panel {
+    height: auto;
+
+    max-height: none;
+  }
+
+
+  /* CARD */
+
+  .garage-result-card {
+    min-height: 125px;
+
+    border-radius: 10px;
+  }
+
+  .garage-result-card-image {
+    flex: 0 0 100px;
+
+    width: 100px;
+
+    min-height: 125px;
+  }
+
+  .garage-result-card-body {
+    padding: 9px;
+  }
+
+  .garage-result-card-top h4 {
+    font-size: 11.5px;
+  }
+
+  .garage-result-type {
+    font-size: 8.5px;
+  }
+
+  .garage-result-rating {
+    font-size: 9.5px;
+  }
+
+  .garage-result-address {
+    font-size: 8px;
+  }
+
+  .garage-result-distance {
+    font-size: 8.5px;
+  }
+
+  .garage-result-card-actions {
+    gap: 4px;
+
+    padding-top: 6px;
+  }
+
+  .garage-result-card-actions button {
+    min-height: 26px;
+
+    padding: 4px 5px;
+
+    font-size: 7.5px;
+  }
+
+
+  /* CURRENT LOCATION */
+
+  .garage-map-current-location {
+    left: 9px;
+
+    bottom: 65px;
+
+    width: 38px;
+
+    height: 38px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+  .garage-map-wrapper {
+    border-radius: 9px;
+  }
+
+  .garage-real-map {
+    height: 320px;
+
+    min-height: 320px;
+  }
+
+
+  /* Make cards horizontal even on small mobile */
+
+  .garage-result-card {
+    display: flex;
+
+    min-height: 120px;
+  }
+
+  .garage-result-card-image {
+    flex: 0 0 92px;
+
+    width: 92px;
+
+    min-height: 120px;
+  }
+
+  .garage-result-card-body {
+    padding: 8px;
+  }
+
+  .garage-result-card-top h4 {
+    font-size: 11px;
+  }
+
+  .garage-result-type {
+    font-size: 8px;
+  }
+
+  .garage-result-rating {
+    margin-top: 4px;
+
+    font-size: 9px;
+  }
+
+  .garage-result-address {
+    margin-top: 3px;
+
+    font-size: 7.8px;
+  }
+
+  .garage-result-distance {
+    margin-top: 3px;
+
+    font-size: 8px;
+  }
+
+  .garage-result-card-actions {
+    display: flex;
+
+    gap: 4px;
+
+    padding-top: 5px;
+  }
+
+  .garage-result-card-actions button {
+    min-height: 25px;
+
+    padding: 3px 5px;
+
+    font-size: 7px;
+  }
+
+  .garage-operational {
+    padding: 3px 5px !important;
+
+    font-size: 6.5px !important;
+  }
+
+  .garage-nearest-badge {
+    top: 6px;
+
+    left: 6px;
+
+    padding: 3px 5px;
+
+    font-size: 7px;
+  }
+
+
+  /* MODAL */
+
+  .garage-details-overlay {
+    align-items: flex-end;
+
+    padding: 0;
+  }
+
+  .garage-details-modal {
+    width: 100%;
+
+    max-height: 94vh;
+
+    border-radius: 16px 16px 0 0;
+  }
+
+  .garage-details-photo {
+    height: 210px;
+  }
+
+  .garage-details-content {
+    padding: 14px;
+  }
+
+  .garage-details-title-row {
+    flex-direction: column;
+  }
+
+  .garage-details-title-row h2 {
+    font-size: 18px;
+  }
+
+  .garage-details-status {
+    align-self: flex-start;
+  }
+
+  .garage-details-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .garage-secondary-actions {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL DEVICES
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+  .garage-real-map {
+    height: 290px;
+
+    min-height: 290px;
+  }
+
+  .garage-result-card-image {
+    flex: 0 0 82px;
+
+    width: 82px;
+  }
+
+  .garage-result-card-top h4 {
+    font-size: 10px;
+  }
+
+  .garage-result-address {
+    font-size: 7px;
+  }
+
+  .garage-result-card-actions button {
+    font-size: 6.5px;
+  }
+
+  .garage-filter-toggle,
+  .garage-location-button {
+    font-size: 9px;
+  }
+}
+/* =========================================================
+   G10 - FINAL UI POLISH
+   ========================================================= */
+
+
+/* =========================================================
+   SMOOTH SCROLLING
+   ========================================================= */
+
+.garage-results-panel {
+  scroll-behavior: smooth;
+}
+
+
+/* =========================================================
+   BETTER SEARCH BOX
+   ========================================================= */
+
+.garage-search-box {
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.garage-search-box:focus-within {
+  border-color: #2563eb;
+
+  box-shadow:
+    0 0 0 3px rgba(37, 99, 235, 0.08);
+}
+
+.garage-search-box input {
+  color: #111827;
+}
+
+
+/* =========================================================
+   FILTER BUTTON
+   ========================================================= */
+
+.garage-filter-toggle {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 5px;
+}
+
+.garage-filter-toggle:active,
+.garage-location-button:active {
+  transform: scale(0.97);
+}
+
+
+/* =========================================================
+   LOCATION BUTTON
+   ========================================================= */
+
+.garage-location-button {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 5px;
+}
+
+.garage-location-button:not(:disabled):hover {
+  box-shadow:
+    0 4px 10px rgba(37, 99, 235, 0.20);
+}
+
+
+/* =========================================================
+   FILTER SECTION ANIMATION
+   ========================================================= */
+
+.garage-advanced-filters {
+  animation: garage-filter-open 0.18s ease;
+}
+
+@keyframes garage-filter-open {
+  from {
+    opacity: 0;
+
+    transform: translateY(-5px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
+
+
+/* =========================================================
+   FILTER SELECT
+   ========================================================= */
+
+.garage-filter-group select {
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.garage-filter-group select:hover {
+  border-color: #cbd5e1;
+}
+
+.garage-filter-group select:focus {
+  border-color: #2563eb;
+
+  box-shadow:
+    0 0 0 3px rgba(37, 99, 235, 0.08);
+}
+
+
+/* =========================================================
+   RESULTS HEADER
+   ========================================================= */
+
+.garage-results-header {
+  box-shadow:
+    0 1px 4px rgba(15, 23, 42, 0.03);
+}
+
+.garage-results-header h3 {
+  letter-spacing: -0.2px;
+}
+
+
+/* =========================================================
+   RESULT COUNT
+   ========================================================= */
+
+.garage-results-header p {
+  display: flex;
+
+  align-items: center;
+
+  gap: 4px;
+}
+
+
+/* =========================================================
+   FILTER CHIPS
+   ========================================================= */
+
+.garage-filter-chip {
+  border: 1px solid #dbeafe;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.garage-filter-chip:hover {
+  background: #dbeafe;
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   GARAGE CARD - FINAL POLISH
+   ========================================================= */
+
+.garage-result-card {
+  isolation: isolate;
+}
+
+.garage-result-card-body {
+  position: relative;
+
+  z-index: 2;
+}
+
+
+/* Card active state */
+
+.garage-result-card:active {
+  transform: scale(0.995);
+}
+
+
+/* =========================================================
+   CARD TITLE
+   ========================================================= */
+
+.garage-result-card-top h4 {
+  letter-spacing: -0.1px;
+}
+
+
+/* =========================================================
+   RATING
+   ========================================================= */
+
+.garage-result-rating {
+  display: flex;
+
+  align-items: center;
+
+  gap: 3px;
+}
+
+
+/* =========================================================
+   DISTANCE BADGE
+   ========================================================= */
+
+.garage-result-distance {
+  display: inline-flex;
+
+  align-items: center;
+
+  width: fit-content;
+
+  padding: 2px 6px;
+
+  border-radius: 5px;
+
+  background: #eff6ff;
+
+  color: #2563eb;
+}
+
+
+/* =========================================================
+   CARD ACTION BUTTONS
+   ========================================================= */
+
+.garage-result-card-actions button {
+  position: relative;
+
+  overflow: hidden;
+}
+
+.garage-result-card-actions button::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background: rgba(255, 255, 255, 0.12);
+
+  opacity: 0;
+
+  transition: opacity 0.2s ease;
+}
+
+.garage-result-card-actions button:hover::after {
+  opacity: 1;
+}
+
+
+/* =========================================================
+   SELECTED CARD
+   ========================================================= */
+
+.garage-result-card-selected {
+  background:
+    linear-gradient(
+      to right,
+      #ffffff,
+      #f8fbff
+    );
+}
+
+
+/* =========================================================
+   CURRENT LOCATION CONTROL
+   ========================================================= */
+
+.garage-map-current-location {
+  backdrop-filter: blur(8px);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.garage-map-current-location:hover {
+  box-shadow:
+    0 4px 12px rgba(15, 23, 42, 0.22);
+}
+
+
+/* =========================================================
+   USER LOCATION PULSE
+   ========================================================= */
+
+.garage-user-marker {
+  animation: garage-location-pulse 2s infinite;
+}
+
+@keyframes garage-location-pulse {
+
+  0% {
+    box-shadow:
+      0 0 0 0 rgba(37, 99, 235, 0.35);
+  }
+
+  70% {
+    box-shadow:
+      0 0 0 9px rgba(37, 99, 235, 0);
+  }
+
+  100% {
+    box-shadow:
+      0 0 0 0 rgba(37, 99, 235, 0);
+  }
+}
+
+
+/* =========================================================
+   LOADING CARD
+   ========================================================= */
+
+.garage-loading-card {
+  animation: garage-loading-fade 0.3s ease;
+}
+
+@keyframes garage-loading-fade {
+  from {
+    opacity: 0;
+
+    transform: translateY(5px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
+
+
+/* =========================================================
+   EMPTY STATE
+   ========================================================= */
+
+.garage-empty-card {
+  animation: garage-empty-show 0.25s ease;
+}
+
+@keyframes garage-empty-show {
+  from {
+    opacity: 0;
+
+    transform: translateY(5px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
+
+
+/* =========================================================
+   MODAL ANIMATION
+   ========================================================= */
+
+.garage-details-overlay {
+  animation: garage-overlay-show 0.2s ease;
+}
+
+@keyframes garage-overlay-show {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.garage-details-modal {
+  animation: garage-modal-show 0.25s ease;
+}
+
+@keyframes garage-modal-show {
+  from {
+    opacity: 0;
+
+    transform: translateY(15px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0) scale(1);
+  }
+}
+
+
+/* =========================================================
+   MODAL CLOSE BUTTON
+   ========================================================= */
+
+.garage-details-close {
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.garage-details-close:hover {
+  background: #111827;
+
+  transform: rotate(90deg);
+}
+
+
+/* =========================================================
+   MODAL ACTION BUTTONS
+   ========================================================= */
+
+.garage-action-primary {
+  box-shadow:
+    0 3px 7px rgba(15, 23, 42, 0.10);
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.garage-action-primary:hover {
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 5px 12px rgba(37, 99, 235, 0.18);
+}
+
+.garage-action-primary:active {
+  transform: scale(0.98);
+}
+
+
+/* =========================================================
+   SECONDARY BUTTONS
+   ========================================================= */
+
+.garage-secondary-actions button {
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.garage-secondary-actions button:hover {
+  transform: translateY(-1px);
+
+  border-color: #cbd5e1;
+}
+
+
+/* =========================================================
+   PHOTO THUMBNAILS
+   ========================================================= */
+
+.garage-photo-thumbnails button {
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.garage-photo-thumbnails button:hover {
+  transform: translateY(-1px);
+}
+
+.garage-photo-thumbnails button.active {
+  box-shadow:
+    0 2px 7px rgba(37, 99, 235, 0.20);
+}
+
+
+/* =========================================================
+   PHOTO NAVIGATION
+   ========================================================= */
+
+.garage-photo-prev,
+.garage-photo-next {
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.garage-photo-prev:hover,
+.garage-photo-next:hover {
+  background: rgba(17, 24, 39, 0.95);
+}
+
+.garage-photo-prev:active,
+.garage-photo-next:active {
+  transform: translateY(-50%) scale(0.94);
+}
+
+
+/* =========================================================
+   OPENING HOURS
+   ========================================================= */
+
+.garage-opening-hour-row {
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.garage-opening-hour-row:hover {
+  background: #f1f5f9;
+
+  transform: translateX(2px);
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+.garage-map-current-location:focus-visible,
+.garage-filter-toggle:focus-visible,
+.garage-location-button:focus-visible,
+.garage-result-card-actions button:focus-visible,
+.garage-secondary-actions button:focus-visible,
+.garage-details-close:focus-visible {
+  outline: 2px solid #2563eb;
+
+  outline-offset: 2px;
+}
+
+
+/* =========================================================
+   REDUCE MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .garage-result-card,
+  .garage-result-card-image img,
+  .garage-map-marker,
+  .garage-map-current-location,
+  .garage-details-modal,
+  .garage-details-overlay,
+  .garage-user-marker {
+    animation: none !important;
+
+    transition: none !important;
+  }
+}
+
+
+/* =========================================================
+   FINAL RESPONSIVE POLISH
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+  .garage-map-content {
+    height: auto;
+  }
+
+  .garage-results-panel {
+    height: auto;
+
+    max-height: none;
+  }
+
+  .garage-results-list {
+    padding: 12px;
+  }
+}
+
+
+@media (max-width: 600px) {
+
+  .garage-map-content {
+    display: block;
+  }
+
+  .garage-real-map {
+    height: 350px;
+
+    min-height: 350px;
+  }
+
+  .garage-results-list {
+    padding: 9px;
+  }
+
+  .garage-result-card {
+    width: 100%;
+  }
+}
+
+
+@media (max-width: 480px) {
+
+  .garage-real-map {
+    height: 320px;
+
+    min-height: 320px;
+  }
+
+  .garage-results-header {
+    padding: 11px;
+  }
+
+  .garage-results-list {
+    padding: 8px;
+  }
+
+  .garage-result-card {
+    min-height: 118px;
+  }
+
+  .garage-result-card-image {
+    min-height: 118px;
+  }
+}

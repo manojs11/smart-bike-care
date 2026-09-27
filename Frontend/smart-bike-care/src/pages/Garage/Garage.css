@@ -1,0 +1,251 @@
+/* =========================================================
+   GARAGE PAGE
+========================================================= */
+
+.garage-page {
+  width: 100%;
+  min-height: 100%;
+
+  padding: 24px;
+
+  box-sizing: border-box;
+
+  background: #f8fafc;
+}
+
+
+/* =========================================================
+   PAGE HEADER
+========================================================= */
+
+.garage-page-header {
+  position: relative;
+
+  width: 100%;
+
+  min-height: 150px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  overflow: hidden;
+
+  margin-bottom: 20px;
+
+  padding: 28px 35px;
+
+  border-radius: 18px;
+
+  box-sizing: border-box;
+
+  background:
+    linear-gradient(
+      110deg,
+      #eff6ff 0%,
+      #dbeafe 55%,
+      #f8fafc 100%
+    );
+
+  border: 1px solid #dbeafe;
+}
+
+
+/* =========================================================
+   HEADER CONTENT
+========================================================= */
+
+.garage-header-content {
+  position: relative;
+
+  z-index: 2;
+
+  max-width: 700px;
+}
+
+.garage-page-label {
+  display: inline-block;
+
+  margin-bottom: 7px;
+
+  color: #2563eb;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.4px;
+}
+
+.garage-page-header h1 {
+  margin: 0;
+
+  color: #0f172a;
+
+  font-size: 30px;
+
+  line-height: 1.2;
+
+  font-weight: 800;
+}
+
+.garage-page-header p {
+  margin: 9px 0 0;
+
+  color: #64748b;
+
+  font-size: 14px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   HEADER ILLUSTRATION
+========================================================= */
+
+.garage-header-illustration {
+  width: 120px;
+
+  height: 120px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: rgba(
+    255,
+    255,
+    255,
+    0.65
+  );
+
+  font-size: 65px;
+
+  transform: rotate(-5deg);
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .garage-page {
+    padding: 15px;
+  }
+
+  .garage-page-header {
+    min-height: 135px;
+
+    padding: 22px;
+
+    border-radius: 14px;
+  }
+
+  .garage-page-header h1 {
+    font-size: 24px;
+  }
+
+  .garage-page-header p {
+    font-size: 13px;
+  }
+
+  .garage-header-illustration {
+    width: 80px;
+
+    height: 80px;
+
+    font-size: 42px;
+  }
+
+}
+
+
+@media (max-width: 500px) {
+
+  .garage-header-illustration {
+    display: none;
+  }
+
+  .garage-page-header {
+    padding: 20px;
+  }
+
+}
+/* =========================================================
+   GOOGLE MAP API ERROR
+========================================================= */
+
+.garage-api-error {
+  width: 100%;
+
+  min-height: 350px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 40px 25px;
+
+  border: 1px solid #fecaca;
+
+  border-radius: 18px;
+
+  background: #ffffff;
+
+  box-sizing: border-box;
+
+  text-align: center;
+}
+
+.garage-api-error-icon {
+  margin-bottom: 15px;
+
+  font-size: 48px;
+}
+
+.garage-api-error h2 {
+  margin: 0 0 8px;
+
+  color: #1e293b;
+
+  font-size: 20px;
+}
+
+.garage-api-error p {
+  margin: 0 0 15px;
+
+  color: #64748b;
+
+  font-size: 14px;
+}
+
+.garage-api-error code {
+  display: block;
+
+  max-width: 100%;
+
+  padding: 10px 14px;
+
+  overflow-x: auto;
+
+  border-radius: 8px;
+
+  background: #f1f5f9;
+
+  color: #334155;
+
+  font-size: 12px;
+}
